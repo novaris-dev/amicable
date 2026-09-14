@@ -17,7 +17,9 @@ const path = require('path');
 const exportPath = 'amicable'; // folder to export into
 
 // root-level files to include
-const files = [];
+const files = [
+  'theme.json',
+];
 
 // folders to include
 const folders = [

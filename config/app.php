@@ -52,4 +52,6 @@ return [
 
 	// Register static proxies classes.
 	'proxies' => [],
+
+	'private' => true,
 ];
