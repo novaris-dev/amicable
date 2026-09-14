@@ -31,17 +31,7 @@ jobs:
               run: npm run build
 
             - name: Create ZIP
-              run: |
-                  zip -r "${{ github.event.repository.name }}.${{ github.ref_name }}.zip" . \
-                    -x ".git/*" \
-                    -x ".github/*" \
-                    -x "node_modules/*"
-
-            - name: Upload workflow artifact
-              uses: actions/upload-artifact@v7
-              with:
-                  name: ${{ github.event.repository.name }}.${{ github.ref_name }}
-                  path: ${{ github.event.repository.name }}.${{ github.ref_name }}.zip
+              run: zip -r "${{ github.event.repository.name }}.${{ github.ref_name }}.zip" amicable/
 
             - name: Upload ZIP to GitHub Release
               env:
