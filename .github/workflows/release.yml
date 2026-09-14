@@ -4,42 +4,49 @@ on:
     release:
         types: [published]
 
+permissions:
+    contents: write
+
 jobs:
     release:
         runs-on: ubuntu-latest
 
         steps:
-            - name: step one
-              uses: webfactory/ssh-agent@v0.5.4
+            - name: Checkout
+              uses: actions/checkout@v7
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v7
               with:
-                  ssh-private-key: ${{ secrets.PRIVATE_KEY }}
+                  node-version: 24
+                  cache: npm
 
-            - name: step two
-              uses: actions/checkout@v2
-              with:
-                  ssh-key: ${{ secrets.PRIVATE_KEY }}
+            - name: Install Composer dependencies
+              run: composer install --no-dev --optimize-autoloader
 
-            - name: step three
-              run: composer install --no-dev
+            - name: Install Node dependencies
+              run: npm ci
 
-            - name: step four
-              run: npm install
-
-            - name: step five
+            - name: Build
               run: npm run build
 
-            - name: step six
-              run: zip -r ${{ github.event.repository.name }}.${{ github.ref_name }}.zip ${{ github.event.repository.name }}
+            - name: Create ZIP
+              run: |
+                  zip -r "${{ github.event.repository.name }}.${{ github.ref_name }}.zip" . \
+                    -x ".git/*" \
+                    -x ".github/*" \
+                    -x "node_modules/*"
 
-            - name: step seven
-              uses: actions/upload-artifact@v4
+            - name: Upload workflow artifact
+              uses: actions/upload-artifact@v7
               with:
                   name: ${{ github.event.repository.name }}.${{ github.ref_name }}
                   path: ${{ github.event.repository.name }}.${{ github.ref_name }}.zip
 
-            - name: step eight
-              uses: JasonEtco/upload-to-release@master
-              with:
-                  args: ${{ github.event.repository.name }}.${{ github.ref_name }}.zip application/zip
+            - name: Upload ZIP to GitHub Release
               env:
-                  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  gh release upload "${{ github.ref_name }}" \
+                    "${{ github.event.repository.name }}.${{ github.ref_name }}.zip" \
+                    --clobber
