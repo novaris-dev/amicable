@@ -1,0 +1,17 @@
+{
+  "resources/js/app.js": {
+    "file": "js/app-CNg63Gyv.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/scss/screen.scss": {
+    "file": "css/screen-DBsJLS0l.css",
+    "src": "resources/scss/screen.scss",
+    "isEntry": true,
+    "name": "screen",
+    "names": [
+      "screen.css"
+    ]
+  }
+}

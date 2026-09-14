@@ -51,5 +51,5 @@ return [
 	'providers' => [],
 
 	// Register static proxies classes.
-	'proxies' => []
+	'proxies' => [],
 ];

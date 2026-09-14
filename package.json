@@ -1,27 +1,26 @@
 {
-	"name": "novaris",
-	"description": "The core foundation of the Novaris Content Management System (CMS), providing a robust and flexible architecture designed to power dynamic content-driven websites.",
+	"name": "amicable",
+	"description": "Amicable is a next-generation theme meticulously crafted for ClassicPress, delivering an unparalleled experience for showcasing your site's content.",
 	"version": "1.0.0",
 	"author": "Benjamin Lu",
 	"license": "GPL-2.0+",
-	"homepage": "https://github.com/novaris-dev/novaris",
+	"homepage": "https://luthemes.com/portfolio/amicable",
 	"main": "resources/js/app.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/novaris-dev.git"
+		"url": "git+https://github.com/luthemes/amicable.git"
 	},
 	"bugs": {
-		"url": "https://github.com/novaris-dev/issues"
+		"url": "https://github.com/luthemes/amicable/issues"
+	},
+	"devDependencies": {
+		"sass": "^1.93.3",
+		"vite": "^7.2.1"
 	},
 	"scripts": {
 		"build": "npm run prod && npm run export",
-		"watch": "mix watch",
-		"prod": "mix --production",
-		"export": "mix --mix-config=webpack.mix.export.js"
-	},
-	"devDependencies": {
-		"laravel-mix": "^6.0.3",
-		"sass": "^1.62.1",
-		"sass-loader": "^13.2.2"
+		"watch": "vite build --watch",
+		"prod": "vite build",
+		"export": "node export-theme.js"
 	}
 }
