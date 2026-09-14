@@ -22,11 +22,8 @@ const files = [];
 // folders to include
 const folders = [
   'app',
-  'config',
   'public', 
-  'storage',
   'user',
-  'vendor'
 ];
 
 // items to delete after copy (same cleanup as your old script, adjusted for Vite)
