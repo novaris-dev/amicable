@@ -1,5 +1,5 @@
-@import '01.headers/index';
-@import '02.navigations/index';
-@import '03.contents/index';
-@import '04.asides/index';
-@import '05.footers/index';
+@forward '01.headers/index';
+@forward '02.navigations/index';
+@forward '03.contents/index';
+@forward '04.asides/index';
+@forward '05.footers/index';

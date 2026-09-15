@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 @function font-families() {
 
 	@return (
@@ -10,5 +12,5 @@
 
 @function font-family( $name ) {
 
-	@return map-get( font-families(), $name );
+	@return map.get( font-families(), $name );
 }

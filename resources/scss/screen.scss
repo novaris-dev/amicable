@@ -15,7 +15,7 @@
 //
 // Settings handle the configuration and variables.
 
-@import '01.settings/__index';
+@forward '01.settings/__index';
 
 // -----------------------------------------------------------------------------
 // Import tools.
@@ -24,7 +24,7 @@
 // These are used throughout the code but don't output CSS on their own. Things
 // like functions, mixins, and extensions go here.
 
-@import '02.tools/__index';
+@forward '02.tools/__index';
 
 // -----------------------------------------------------------------------------
 // Import generic styles.
@@ -34,7 +34,7 @@
 // fonts, etc. are best handled here. These are the base styles that other
 // styles will build upon.
 
-@import '03.generics/__index';
+@forward '03.generics/__index';
 
 // -----------------------------------------------------------------------------
 // Import element styles.
@@ -44,7 +44,7 @@
 // The styles in this folder should only handle the defaults. More specific
 // styles should be handled later in the cascade.
 
-@import '04.elements/__index';
+@forward '04.elements/__index';
 
 // -----------------------------------------------------------------------------
 // Import object styles.
@@ -52,7 +52,7 @@
 //
 // Undecorated design patterns.
 
-@import '05.objects/__index';
+@forward '05.objects/__index';
 
 // -----------------------------------------------------------------------------
 // Import layout styles.
@@ -60,7 +60,7 @@
 //
 // global layouts.
 
-@import '06.layouts/__index';
+@forward '06.layouts/__index';
 
 // -----------------------------------------------------------------------------
 // Import component styles.
@@ -70,7 +70,7 @@
 // fonts, etc. are best handled here. These are the base styles that other
 // styles will build upon.
 
-@import '07.components/__index';
+@forward '07.components/__index';
 
 // -----------------------------------------------------------------------------
 // Import utility styles.
@@ -80,66 +80,4 @@
 // necessary, this is the only place where `!important` rules should go, but
 // only if necessary.
 
-@import '08.utilities/__index';
-
-.plugin {
-    background: #fff;
-    border: 1px solid #ccd0d4;
-    box-shadow: 0 1px 1px rgba(0,0,0,.04);
-    padding: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.plugin.active {
-    border-left: 4px solid #007cba;
-}
-
-.plugin-id-container {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-}
-
-.plugin-name {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0;
-}
-
-.plugin-actions {
-    margin-left: auto;
-}
-
-.plugin-actions a {
-    margin-left: 10px;
-}
-
-.button {
-    text-decoration: none;
-    background: #007cba;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 14px;
-}
-
-.button-secondary {
-    background: #f0f0f0;
-    color: #444;
-}
-
-.button:hover {
-    background: #006ba1;
-}
-
-.button-secondary:hover {
-    background: #e5e5e5;
-}
-
-.plugin.active .plugin-name span {
-    color: #007cba;
-    font-weight: bold;
-}
+@forward '08.utilities/__index';

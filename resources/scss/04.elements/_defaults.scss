@@ -1,6 +1,8 @@
+@use '../01.settings/fonts' as fonts;
+
 body {
 	color: #677d89;
-	font-family: font-family( 'primary' );
+	font-family: fonts.font-family( 'primary' );
 	margin: 0;
 }
 

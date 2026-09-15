@@ -1,4 +1,4 @@
-@import 'defaults';
-@import 'headings';
+@forward 'defaults';
+@forward 'headings';
 
-@import '01.code/index';
+@forward '01.code/index';

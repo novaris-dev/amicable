@@ -1,8 +1,8 @@
-@import 'borders';
-@import 'breaks';
-@import 'colors';
-@import 'dimensions';
-@import 'effects';
-@import 'fonts';
-@import 'sizings';
-@import 'spacings';
+@forward 'borders';
+@forward 'breaks';
+@forward 'colors';
+@forward 'dimensions';
+@forward 'effects';
+@forward 'fonts';
+@forward 'sizings';
+@forward 'spacings';
