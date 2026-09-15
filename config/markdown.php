@@ -33,7 +33,7 @@ return [
 		League\CommonMark\Extension\DescriptionList\DescriptionListExtension::class,
 		League\CommonMark\Extension\DisallowedRawHtml\DisallowedRawHtmlExtension::class,
 		League\CommonMark\Extension\Footnote\FootnoteExtension::class,
-		League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension::class,
+		// League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension::class,
 		League\CommonMark\Extension\SmartPunct\SmartPunctExtension::class,
 		League\CommonMark\Extension\Strikethrough\StrikethroughExtension::class,
 		League\CommonMark\Extension\Table\TableExtension::class,
