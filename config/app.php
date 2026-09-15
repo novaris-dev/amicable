@@ -43,7 +43,6 @@ return [
 	'home_alias' => 'post',
 
     'primary' => [
-        'Blog' => '/blog',
 		'About' => '/about',
     ],
 
