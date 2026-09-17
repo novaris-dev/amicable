@@ -1,3 +1,3 @@
-<?php $engine->include( 'header.default' ); ?>
-<?php $engine->include( 'content.default' ); ?>
-<?php $engine->include( 'footer.default' ); ?>
+<?php $engine->include( 'header' ); ?>
+<?php $engine->include( 'content' ); ?>
+<?php $engine->include( 'footer' ); ?>
