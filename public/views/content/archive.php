@@ -1,4 +1,3 @@
-<?php $engine->include( 'header' ); ?>
 <section id="content" class="site-content">
 	<main id="main" class="content-area">
 		<header class="archive-header">
@@ -10,4 +9,3 @@
 		<?php $engine->each( 'entry.archive', $collection, 'entry' ) ?>
 	</main>
 </section>
-<?php $engine->include( 'footer' ); ?>
