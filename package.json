@@ -19,7 +19,7 @@
 	},
 	"scripts": {
 		"build": "npm run prod && npm run export",
-		"watch": "vite build --watch",
+		"watch": "vite build --watch --minify=false",
 		"prod": "vite build",
 		"export": "node export-theme.js"
 	}
