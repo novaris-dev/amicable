@@ -1,49 +1,43 @@
 @use '../01.settings/fonts' as fonts;
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	display     : block;
+	font-family : fonts.font-family( 'heading' );
+	font-weight : 700;
+	line-height : 1.2;
+}
+
 h1 {
-	display: block;
-	font-family: fonts.font-family( 'heading' );
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin: 0.67em 0;
+	font-size : 2.5rem;
+	margin    : 0 0 1.5rem;
 }
 
 h2 {
-	display: block;
-	font-family: fonts.font-family( 'heading' );
-	font-size: 2rem;
-	font-weight: 700;
-	margin: 0.83em 0;
+	font-size : 2rem;
+	margin    : 2rem 0 1rem;
 }
 
 h3 {
-	display: block;
-	font-family: fonts.font-family( 'heading' );
-	font-size: 1.5rem;
-	font-weight: 700;
-	margin: 1em 0;
+	font-size : 1.5rem;
+	margin    : 1.75rem 0 0.75rem;
 }
 
 h4 {
-	display: block;
-	font-family: fonts.font-family( 'heading' );
-	font-size: 1.25rem;
-	font-weight: 700;
-	margin: 1.33em 0;
+	font-size : 1.25rem;
+	margin    : 1.5rem 0 0.75rem;
 }
 
 h5 {
-	display: block;
-	font-family: fonts.font-family( 'heading' );
-	font-size: 1.125rem;
-	font-weight: 700;
-	margin: 1.67em 0;
+	font-size : 1.125rem;
+	margin    : 1.5rem 0 0.75rem;
 }
 
 h6 {
-	display: block;
-	font-family: fonts.font-family( 'heading' );
-	font-size: 1rem;
-	font-weight: 700;
-	margin: 2.33em 0;
+	font-size : 1rem;
+	margin    : 1.5rem 0 0.75rem;
 }

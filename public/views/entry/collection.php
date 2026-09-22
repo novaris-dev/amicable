@@ -1,9 +1,9 @@
-<article id="" class="post">
+<article id="" class="<?= e( post_class() ) ?>">
     <header class="entry-header">
-        <h2 class="entry-title"><a href="<?= e( $entry->url() ); ?>"><?= e( $entry->title() ); ?></a></h2>
         <div class="entry-metadata">
             <?= $entry->date(); ?>
         </div>
+        <h2 class="entry-title"><a href="<?= e( $entry->url() ); ?>"><?= e( $entry->title() ); ?></a></h2>
     </header>
     <div class="entry-content">
         <?= $entry->excerpt( 50, sprintf(

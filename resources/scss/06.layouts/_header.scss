@@ -1,46 +1,48 @@
-.site-header {
-    background: #fcfcfc;
-    border-bottom: 0.063em solid #f3f3f3;
-    padding: 0.5rem;
+.app {
 
-
-	.branding-navigation {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 1.125rem;
+	&__header {
+		background    : #fcfcfc;
+		border-bottom : 0.063em solid #f3f3f3;
+		padding       : 0.5rem;
 	}
 
-	.site-branding {
-		display: flex;
-		align-items: center;
+	&__header-inner {
+		align-items     : center;
+		display         : flex;
+		justify-content : space-between;
+		width           : 100%;
+	}
+}
 
-		.sep {
-			font-size: 1.125rem;
-			margin-left: 0.75rem;
-			margin-right: 0.75rem;
-		}
+.branding {
+	align-items : center;
+	display     : flex;
 
-		.site-title,
-		.site-description {
-			margin: 0;
-			padding: 0;
-		}
+	&__separator {
+		font-size    : 1.125rem;
+		margin-left  : 0.75rem;
+		margin-right : 0.75rem;
+	}
 
-		.site-title {
-			font-size: 1.75rem;
-			margin-left: 1rem;
-		}
+	&__title,
+	&__description {
+		margin  : 0;
+		padding : 0;
+	}
 
-		.site-title a {
-			border-bottom: none;
-			color: #757575;
-			text-decoration: none;
-		}
+	&__title {
+		font-size : 1.75rem;
+		margin-left: 0.75rem;
+	}
 
-		.site-description {
-			color: #959595;
-			font-size: 15px;
-		}
+	&__link {
+		border-bottom   : none;
+		color           : #757575;
+		text-decoration : none;
+	}
+
+	&__description {
+		color     : #959595;
+		font-size : 0.9375rem;
 	}
 }

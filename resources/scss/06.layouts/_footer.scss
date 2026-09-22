@@ -1,11 +1,14 @@
-.site-footer {
-    background: #fcfcfc;
-    border-top: 0.063rem solid #f3f3f3;
-    padding: 0.5rem;
-    text-align: center;
+.app {
 
-    .site-info {
-        color: #959595;
-        line-height: 1.8em;
-    }
+	&__footer {
+		background    : #fcfcfc;
+		border-top    : 0.063rem solid #f3f3f3;
+		padding       : 0.5rem;
+		text-align    : center;
+	}
+
+	&__footer-info {
+		color       : #959595;
+		line-height : 1.8em;
+	}
 }

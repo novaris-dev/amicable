@@ -5,7 +5,6 @@ date: 2024-12-10 12:00:00 -6
 category: [ uncategorized ]
 thumbnail: "/user/media/sunflower.jpg"
 ---
-
 Every new beginning comes with a mixture of excitement and uncertainty.
 
 Starting a new project, learning a skill, changing direction, or pursuing an idea means stepping into something you haven't completely figured out yet.
