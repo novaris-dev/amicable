@@ -1,5 +1,173 @@
+////
+//// Default Reset
+////
+//// Provides a consistent baseline across browsers while leaving typography
+//// and component styling to the appropriate element and component layers.
+////
+//// @group Styles
+//// @author Benjamin Lu
+////
+
+// -----------------------------------------------------------------------------
+// Box sizing.
+// -----------------------------------------------------------------------------
+
+*,
+*::before,
+*::after {
+	box-sizing : border-box;
+}
+
+// -----------------------------------------------------------------------------
+// Document.
+// -----------------------------------------------------------------------------
+
 html {
-	box-sizing: border-box;
-	line-height: 1.15;
-	text-decoration: none;
+	-webkit-text-size-adjust : 100%;
+}
+
+html,
+body {
+	margin  : 0;
+	padding : 0;
+}
+
+body {
+	min-height : 100vh;
+}
+
+// -----------------------------------------------------------------------------
+// Sections.
+// -----------------------------------------------------------------------------
+
+main {
+	display : block;
+}
+
+// -----------------------------------------------------------------------------
+// Typography.
+// -----------------------------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+dl,
+dd {
+	margin : 0;
+}
+
+// -----------------------------------------------------------------------------
+// Lists.
+// -----------------------------------------------------------------------------
+
+ol,
+ul {
+	margin  : 0;
+	padding : 0;
+}
+
+// Restore list markers when a list has no class.
+ol:not([class]),
+ul:not([class]) {
+	padding-left : 2rem;
+}
+
+// -----------------------------------------------------------------------------
+// Links.
+// -----------------------------------------------------------------------------
+
+a {
+	background-color : transparent;
+}
+
+// -----------------------------------------------------------------------------
+// Media.
+// -----------------------------------------------------------------------------
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+	display   : block;
+	max-width : 100%;
+}
+
+img,
+video {
+	height : auto;
+}
+
+// -----------------------------------------------------------------------------
+// Forms.
+// -----------------------------------------------------------------------------
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color       : inherit;
+	font        : inherit;
+	line-height : inherit;
+	margin      : 0;
+}
+
+button,
+input {
+	overflow : visible;
+}
+
+button,
+select {
+	text-transform : none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	cursor : pointer;
+}
+
+textarea {
+	overflow : auto;
+	resize   : vertical;
+}
+
+// -----------------------------------------------------------------------------
+// Tables.
+// -----------------------------------------------------------------------------
+
+table {
+	border-collapse : collapse;
+	border-spacing  : 0;
+}
+
+// -----------------------------------------------------------------------------
+// Miscellaneous.
+// -----------------------------------------------------------------------------
+
+hr {
+	box-sizing : content-box;
+	height     : 0;
+	overflow   : visible;
+}
+
+summary {
+	cursor  : pointer;
+	display : list-item;
+}
+
+[hidden] {
+	display : none;
 }
