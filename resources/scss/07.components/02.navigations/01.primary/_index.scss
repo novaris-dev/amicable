@@ -8,25 +8,35 @@
 		cursor      : pointer;
 		font-family : font-family( primary );
 		left        : 1.125rem;
+		opacity     : 1;
 		padding     : 0.5rem 1rem;
 		position    : fixed;
+		transform   : translateY( 0 );
+		transition  : opacity 0.25s ease, transform 0.25s ease;
+		z-index     : 2;
+
+		&--hidden {
+			opacity        : 0;
+			pointer-events : none;
+			transform      : translateY( 150% );
+		}
 	}
 
 	.menu-items {
-		left     : -9999rem;
-		position : absolute;
-
-		&--toggled {
-			background : #000000;
-			bottom     : 3.5rem;
-			display    : block;
-			left       : 1.25rem;
-			margin     : 0;
-			padding    : 0;
-			position   : fixed;
-			right      : 1.125rem;
-			text-align : left;
-		}
+		background     : #000000;
+		bottom         : 3.5rem;
+		left           : 1.25rem;
+		margin         : 0;
+		opacity        : 0;
+		padding        : 0;
+		pointer-events : none;
+		position       : fixed;
+		right          : 1.125rem;
+		text-align     : left;
+		transform      : translateY( 1rem );
+		transition     : opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+		visibility     : hidden;
+		z-index        : 1;
 
 		&__item {
 			list-style-type : none;
@@ -94,6 +104,16 @@
 			margin          : 0;
 			padding         : 0;
 			position        : absolute;
+		}
+	}
+
+	.primary-menu.toggled {
+
+		.menu-items {
+			opacity        : 1;
+			pointer-events : auto;
+			transform      : translateY( 0 );
+			visibility     : visible;
 		}
 	}
 }

@@ -44,6 +44,7 @@ return [
 
     'primary' => [
 		'About' => '/about',
+		'Blog' => '/blog',
     ],
 
 	// Register service providers.
