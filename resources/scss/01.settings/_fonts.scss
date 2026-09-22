@@ -1,12 +1,42 @@
 @use 'sass:map';
 
+@function fonts() {
+
+	@return (
+		fira-sans:       #{'Fira Sans', sans-serif},
+		inter:           #{Inter, sans-serif},
+		lato:            #{Lato, sans-serif},
+		montserrat:      #{Montserrat, sans-serif},
+		nunito-sans:     #{'Nunito Sans', sans-serif},
+		open-sans:       #{'Open Sans', sans-serif},
+		poppins:         #{Poppins, sans-serif},
+		raleway:         #{Raleway, sans-serif},
+		roboto:          #{Roboto, sans-serif},
+		lora:            #{Lora, Georgia, serif},
+		merriweather:    #{Merriweather, serif},
+		playfair-display: #{'Playfair Display', Georgia, serif},
+		libre-baskerville: #{'Libre Baskerville', Georgia, serif},
+		roboto-slab:     #{'Roboto Slab', Georgia, serif},
+		tangerine:       #{Tangerine, cursive},
+		source-code-pro: #{'Source Code Pro', Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace},
+		jetbrains-mono:  #{'JetBrains Mono', Monaco, Consolas, "Courier New", monospace},
+		roboto-mono:     #{'Roboto Mono', Monaco, Consolas, "Courier New", monospace},
+		space-mono:      #{'Space Mono', Monaco, Consolas, "Courier New", monospace}
+	);
+}
+
+@function font( $name ) {
+
+	@return map.get( fonts(), $name );
+}
+
 @function font-families() {
 
 	@return (
-		heading: var( --font-family-heading, 'Fira Sans', sans-serif ),
-		primary: var( --font-family-primary, 'Merriweather', serif ),
-		date:    var( --font-family-date, 'Tangerine', cursive ),
-		code   : #{'Source Code Pro', Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace}
+		heading: var( --font-family-heading, #{font( fira-sans )} ),
+		primary: var( --font-family-primary, #{font( merriweather )} ),
+		date:    var( --font-family-date, #{font( tangerine )} ),
+		code:    var( --font-family-code, #{font( source-code-pro )} )
 	);
 }
 
