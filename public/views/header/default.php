@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="stylesheet" href="<?= e( asset( 'resources/scss/screen.scss' ) ) ?>" />
+<?= $doctitle->render(); ?>
 <?= Novaris\Font\fonts(); ?>
 </head>
 <body class="<?= e( body_class() ) ?>">
-
+<?= $engine->doctype() ?>	
 <div id="container" class="app">
 	<header id="masthead" class="app__header">
 		<div class="app__header-inner">
