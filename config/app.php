@@ -40,7 +40,7 @@ return [
 	// should be the content type name/type (e.g., `post`) set in the
 	// `/config/content.php` configuration file.  Leave empty to show the
 	// normal homepage.
-	'home_alias' => 'post',
+	'home_alias' => '',
 
     'primary' => [
 		'About' => '/about',
