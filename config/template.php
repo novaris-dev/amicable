@@ -5,7 +5,6 @@ use Novaris\Template\Tag\{
 	Breadcrumbs,
 	Categories,
     RecentPosts,
-	DocumentTitle,
 };
 
 return [
@@ -13,7 +12,6 @@ return [
 		'archives'   => Archives::class,
 		'categories' => Categories::class,
 		'recent_posts' => RecentPosts::class,
-        'breadcrumbs' => Breadcrumbs::class,
-        'document_title' => DocumentTitle::class	
+        'breadcrumbs' => Breadcrumbs::class,	
 	]
 ];
