@@ -2,10 +2,10 @@
 	<main id="main" class="content-area">
         <article id="" class="<?= e( post_class() ) ?>">
             <header class="entry-header">
-                <h1 class="entry-title"><?= e( $single->title() ); ?></h1>
+                <h1 class="entry-title"><?= e( $page->title() ); ?></h1>
             </header>
             <div class="entry-content">
-                <?= $single->content() ?>
+                <?= $page->content() ?>
             </div>
         </article>
 	</main>

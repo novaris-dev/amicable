@@ -827,12 +827,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/novaris-dev/framework.git",
-                "reference": "c5e50479f3875c4cb2f5eb4e8985c61d4d38b20d"
+                "reference": "d715df030f5575f9478e528deb417b85d7239152"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/novaris-dev/framework/zipball/c5e50479f3875c4cb2f5eb4e8985c61d4d38b20d",
-                "reference": "c5e50479f3875c4cb2f5eb4e8985c61d4d38b20d",
+                "url": "https://api.github.com/repos/novaris-dev/framework/zipball/d715df030f5575f9478e528deb417b85d7239152",
+                "reference": "d715df030f5575f9478e528deb417b85d7239152",
                 "shasum": ""
             },
             "require": {
@@ -877,7 +877,7 @@
                 "issues": "https://github.com/novaris-dev/framework/issues",
                 "source": "https://github.com/novaris-dev/framework/tree/develop"
             },
-            "time": "2026-09-23T05:08:41+00:00"
+            "time": "2026-09-24T16:37:55+00:00"
         },
         {
             "name": "phpoption/phpoption",
