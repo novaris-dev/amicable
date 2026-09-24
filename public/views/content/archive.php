@@ -9,4 +9,3 @@
 		<?php $engine->each( 'entry.archive', $entries, 'entry' ) ?>
 	</main>
 </section>
-<?php dd( $data->all() ); ?>
