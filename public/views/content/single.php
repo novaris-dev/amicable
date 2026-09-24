@@ -20,6 +20,7 @@
 					<?php endforeach ?>
 				</div>
 			<?php endif ?>
+			<?= $engine->archives() ?>
 		</footer>
 		</article>
 	</main>

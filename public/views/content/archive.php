@@ -6,6 +6,6 @@
 		<section class="archive-content">
 			<?= $archive->content(); ?>
 		</section>
-		<?php $engine->each( 'entry.archive', $entries, 'entry' ) ?>
+		<?= $engine->each( 'entry.archive', $entries, 'entry' ) ?>
 	</main>
 </section>
