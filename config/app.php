@@ -43,8 +43,8 @@ return [
 	'home_alias' => '',
 
     'primary' => [
-		'About' => '/about',
 		'Blog' => '/blog',
+		'About' => '/about',
     ],
 
 	// Register service providers.
