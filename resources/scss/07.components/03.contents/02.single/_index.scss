@@ -2,74 +2,78 @@
 
 .content-area {    
 	line-height: 1.8rem;
-	.entry {
 
+	.entry {
 		margin-top: 3rem;
 
 		&:first-child {
 			margin-top: 0;
 		}
 
-        .entry-header {
+		&__header {
 			margin-left: auto;
 			margin-right: auto;
-			max-width: 640px;
+			max-width: 640px;	
+		}
 
-            .entry-title {
-                color: #000000;
-				margin: 0;
+		&__title {
+			color: #000000;
+			margin: 0;
 
-                a {
-                    color: #000000;
-					text-decoration: none;
-
-					&:hover {
-						text-decoration: underline;
-					}
-                }
-            }
-
-            .entry-metadata {
-                color: #959595;
-				font-family: fonts.font-family( 'date' );
-				font-size: 1.625rem;
-
-                .fa-user {
-                    color: #959595;
-                    padding-right: 0.313em;
-                }
-
-                .fa-calendar-alt,
-                .fa-comment {
-                    color: #959595;
-                    padding: 0 0.313em 0 0.688em;
-                }
-            }
-        }
-
-		.entry-content {
-			margin: 1rem auto;
-			max-width: 640px;
-
-			.entry-more-link {
-				font-size: 14px;
-				font-style: italic;
+			a {
+				color: #000000;
+				text-decoration: none;
 			}
 		}
 
-        .entry-footer {
-			font-size: 14px;
-			font-style: italic;
-            text-align: center;
+		&__metadata {
+			color: #959595;
+			font-family: fonts.font-family( 'date' );
+			font-size: 1.625rem;
+		}
 
-			.entry__terms {
-				font-weight: bold;
+		&__thumbnail {
+			display: block;
+			margin: 0.5rem auto 0 auto;
+			max-width: 1170px;
+			overflow: hidden;
+			border-radius: 0.75rem;
 
-				a {
-					font-weight: normal;
+			&-image {
+				display: block;
+				width: 100%;
+				height: auto;
+				transition: transform 0.4s ease;
+
+				&:hover {
+					transform: scale( 1.025 );
 				}
 			}
-        }
+		}
+
+		&__content {
+			margin: 1rem auto;
+			max-width: 640px;
+		}	
+
+		&__more-link {
+			font-size: 14px;
+			font-style: italic;
+		}
+
+		&__footer {
+			font-size: 14px;
+			font-style: italic;	
+			text-align: center;
+		}
+
+		&__terms {
+			font-weight: bold;
+
+			a {
+				font-weight: normal;
+			}
+		}
 	}
 }
 
@@ -113,4 +117,10 @@
 			}
 		}
 	}
+}
+
+
+img {
+	height: auto;
+	max-width: 100%;
 }
