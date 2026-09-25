@@ -54,4 +54,31 @@ return [
 	'proxies' => [],
 
 	'private' => true,
+
+	'supports' => [
+		'featured-image' => [
+			'sizes' => [
+				'post-thumbnail' => [
+					'width'  => 178,
+					'height' => 100,
+					'crop'   => true,
+				],
+				'amicable-landscape-medium' => [
+					'width'  => 640,
+					'height' => 360,
+					'crop'   => true,
+				],
+				'amicable-landscape-large' => [
+					'width'  => 896,
+					'height' => 504,
+					'crop'   => true,
+				],
+				'amicable-landscape-extra-large' => [
+					'width'  => 1366,
+					'height' => 768,
+					'crop'   => true,
+				],
+			],
+		],
+	],
 ];
