@@ -24,6 +24,7 @@ const files = [
 // folders to include
 const folders = [
   'app',
+  'config',
   'public',
 ];
 
