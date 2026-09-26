@@ -25,7 +25,7 @@ return [
 	'tagline' => 'A Novaris Theme',
 
 	// URL to the site.
-	'uri' => env( 'APP_URL' ),
+	'url' => env( 'APP_URL' ),
 
 	// Select from a list of supported timezones:
 	// https://www.php.net/manual/en/timezones.php
