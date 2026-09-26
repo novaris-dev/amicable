@@ -1,4 +1,4 @@
-<?php Novaris\Theme\Menu\display_nav_menu( [
+<?php Novaris\Theme\Menu\display( [
 	'theme_location'  => 'primary',
 	'container_id'    => 'primary',
 	'container_class' => 'primary-menu',
