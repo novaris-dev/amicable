@@ -14,12 +14,15 @@
 		"url": "https://github.com/luthemes/amicable/issues"
 	},
 	"devDependencies": {
+		"concurrently": "^10.0.5",
 		"sass": "^1.93.3",
 		"vite": "^7.2.1"
 	},
 	"scripts": {
 		"build": "npm run prod && npm run export",
-		"watch": "vite build --watch --minify=false",
+		"dev": "concurrently \"npm:watch:vite\" \"npm:watch:novaris\"",
+		"watch:vite": "vite build --watch --minify=false",
+		"watch:novaris": "composer novaris export -- --watch",
 		"prod": "vite build",
 		"export": "node export-theme.js"
 	}
