@@ -26,6 +26,7 @@ const folders = [
   'app',
   'config',
   'public',
+  'resources',
 ];
 
 // items to delete after copy (same cleanup as your old script, adjusted for Vite)
