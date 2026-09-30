@@ -1,6 +1,6 @@
 document.addEventListener( 'DOMContentLoaded', function() {
 	var menuButton    = document.querySelector( '.menu-toggle' );
-	var menuContainer = document.querySelector( '#primary' );
+	var menuContainer = document.querySelector( '.primary-menu' );
 	var lastScroll    = window.scrollY;
 
 	if ( ! menuButton || ! menuContainer ) {
