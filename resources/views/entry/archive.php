@@ -1,4 +1,4 @@
-<article id="" class="<?= e( post_class() ) ?>">
+<article class="<?= e( post_class() ) ?>">
     <header class="entry-header">
         <div class="entry-metadata">
             <?= $entry->date(); ?>
