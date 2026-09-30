@@ -1,8 +1,10 @@
 <article class="<?= e( post_class() ) ?>">
 	<header class="entry__header">
-		<div class="entry__metadata">
-			<?= $entry->date(); ?>
-		</div>
+		<?php if ( $entry->date() ) : ?>
+			<div class="entry__metadata">
+				<?= $entry->date(); ?>
+			</div>
+		<?php endif ?>
 
 		<h2 class="entry__title">
 			<a class="entry__title-anchor" href="<?= e( $entry->url() ); ?>">
