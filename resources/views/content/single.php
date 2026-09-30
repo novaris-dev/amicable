@@ -12,7 +12,7 @@
 			</header>
 			<?php if ( $thumbnail = $single->thumbnail( 'amicable-landscape-extra-large' ) ) : ?>
 				<picture class="entry__thumbnail">
-					<img class="entry__thumbnail" src="<?= e( $thumbnail->url() ); ?>" width="<?= $thumbnail->width(); ?>" height="<?= $thumbnail->height(); ?>" alt="">
+					<img class="entry__thumbnail-image" src="<?= e( $thumbnail->url() ); ?>" width="<?= $thumbnail->width(); ?>" height="<?= $thumbnail->height(); ?>" alt="">
 				</picture>
 			<?php endif ?>
 			<div class="entry__content">

@@ -13,7 +13,7 @@
 
 	<?php if ( $thumbnail = $entry->thumbnail( 'amicable-landscape-large' ) ) : ?>
 		<picture class="entry__thumbnail">
-			<img class="entry__thumbnail" src="<?= e( $thumbnail->url() ); ?>" width="<?= $thumbnail->width(); ?>" height="<?= $thumbnail->height(); ?>" alt="">
+			<img class="entry__thumbnail-image" src="<?= e( $thumbnail->url() ); ?>" width="<?= $thumbnail->width(); ?>" height="<?= $thumbnail->height(); ?>" alt="">
 		</picture>
 	<?php endif ?>
 
