@@ -2,5 +2,8 @@ node_modules
 public
 vendor
 
+# Theme export (npm run build)
+amicable/
+
 .env
 .env.local

@@ -25,7 +25,7 @@ const files = [
 const folders = [
   'app',
   'config',
-  'public',
+  'public/assets',
   'resources',
 ];
 
