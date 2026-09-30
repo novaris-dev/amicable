@@ -36,7 +36,7 @@
 		heading: var( --font-family-heading, #{font( fira-sans )} ),
 		primary: var( --font-family-primary, #{font( merriweather )} ),
 		date:    var( --font-family-date, #{font( tangerine )} ),
-		code:    var( --font-family-code, #{font( source-code-pro )} )
+		code:    var( --font-family-code, #{font( jetbrains-mono )} )
 	);
 }
 

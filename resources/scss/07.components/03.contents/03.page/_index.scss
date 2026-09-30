@@ -1,3 +1,5 @@
+@use '../../../01.settings/fonts' as fonts;
+
 .content-area {
 
 	.page {
@@ -29,7 +31,7 @@
 
             .entry-metadata {
                 color: #959595;
-				font-family: font-family( 'date' );
+				font-family: fonts.font-family( 'date' );
 				font-size: 1.625rem;
 
                 .fa-user {
@@ -106,7 +108,7 @@
 					}
 
 					.entry-metadata {
-						font-family: font-family( date );
+						font-family: fonts.font-family( 'date' );
 						font-size: 1.8rem;
 					}
 				}

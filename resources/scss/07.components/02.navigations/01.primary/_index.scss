@@ -1,3 +1,5 @@
+@use '../../../01.settings/fonts' as fonts;
+
 @media screen and ( max-width: 768px ) {
 
 	.menu-toggle {
@@ -6,7 +8,7 @@
 		bottom      : 1.125rem;
 		color       : #ffffff;
 		cursor      : pointer;
-		font-family : font-family( primary );
+		font-family : fonts.font-family( 'primary' );
 		left        : 1.125rem;
 		opacity     : 1;
 		padding     : 0.5rem 1rem;
