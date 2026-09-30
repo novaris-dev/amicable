@@ -30,7 +30,7 @@ return [
 	// yoursite.com/purge/cache/{$key}
 	// yoursite.com/purge/cache/content/{$key}
 	// yoursite.com/purge/cache/global/{$key}
-	'purge_key' => env( 'PURGE_KEY' ),
+	'purge_key' => env( 'PURGE_KEY', '' ),
 
 	// Set a default cache expiration time. This should be a time in seconds.
 	// If set to 0, cached data will remain until it is purged or the system
