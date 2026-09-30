@@ -8,8 +8,7 @@
 <?= $doctitle->render(); ?>
 <?= Novaris\Font\fonts(); ?>
 </head>
-<body class="<?= e( body_class() ) ?>">
-<?= $engine->doctype() ?>	
+<body class="<?= e( body_class() ) ?>">	
 <div id="container" class="app">
 	<header id="masthead" class="app__header">
 		<div class="app__header-inner">
