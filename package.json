@@ -1,17 +1,17 @@
 {
 	"name": "amicable",
-	"description": "Amicable is a next-generation theme meticulously crafted for ClassicPress, delivering an unparalleled experience for showcasing your site's content.",
+	"description": "Amicable is the default theme for the Novaris Content Management System, providing a clean, minimal starting point for showcasing your site's content.",
 	"version": "1.0.0",
 	"author": "Benjamin Lu",
-	"license": "GPL-2.0+",
-	"homepage": "https://luthemes.com/portfolio/amicable",
+	"license": "GPL-2.0-or-later",
+	"homepage": "https://novaris-dev.com/portfolio/amicable",
 	"main": "resources/js/app.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/luthemes/amicable.git"
+		"url": "git+https://github.com/novaris-dev/amicable.git"
 	},
 	"bugs": {
-		"url": "https://github.com/luthemes/amicable/issues"
+		"url": "https://github.com/novaris-dev/amicable/issues"
 	},
 	"devDependencies": {
 		"concurrently": "^10.0.5",
