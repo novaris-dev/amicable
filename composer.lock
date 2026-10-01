@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "71ce33926fbe3c5b8365e5fd9bf81f22",
+    "content-hash": "023a5586f8755aee89af53d3864d79ba",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -967,7 +967,7 @@
         },
         {
             "name": "novaris-dev/framework",
-            "version": "dev-develop",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/novaris-dev/framework.git",
@@ -993,7 +993,6 @@
             "require-dev": {
                 "phpunit/phpunit": "^11.5"
             },
-            "default-branch": true,
             "bin": [
                 "src/bin/novaris"
             ],
@@ -1026,7 +1025,7 @@
             "description": "Novaris Framework: The core foundation of the Novaris Content Management System (CMS), providing a robust and flexible architecture designed to power dynamic content-driven websites",
             "support": {
                 "issues": "https://github.com/novaris-dev/framework/issues",
-                "source": "https://github.com/novaris-dev/framework/tree/develop"
+                "source": "https://github.com/novaris-dev/framework/tree/v1.0.0"
             },
             "time": "2026-09-30T23:44:11+00:00"
         },
@@ -2095,12 +2094,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "novaris-dev/framework": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
