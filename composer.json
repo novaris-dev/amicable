@@ -14,7 +14,7 @@
 		}
 	},
     "require": {
-        "novaris-dev/framework": "dev-develop"
+        "novaris-dev/framework": "^1.0"
     },
     "scripts": {
 	    "novaris": "php vendor/novaris-dev/framework/src/bin/novaris"

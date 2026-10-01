@@ -971,12 +971,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/novaris-dev/framework.git",
-                "reference": "737b35ecb00318a11aa90220cf0a2bdca707c9d8"
+                "reference": "a731f0a9267112177c720b48d18ca0f9acc85a24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/novaris-dev/framework/zipball/737b35ecb00318a11aa90220cf0a2bdca707c9d8",
-                "reference": "737b35ecb00318a11aa90220cf0a2bdca707c9d8",
+                "url": "https://api.github.com/repos/novaris-dev/framework/zipball/a731f0a9267112177c720b48d18ca0f9acc85a24",
+                "reference": "a731f0a9267112177c720b48d18ca0f9acc85a24",
                 "shasum": ""
             },
             "require": {
@@ -989,6 +989,9 @@
                 "symfony/var-dumper": "^6.0",
                 "symfony/yaml": "^6.0",
                 "vlucas/phpdotenv": "^5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^11.5"
             },
             "default-branch": true,
             "bin": [
@@ -1025,7 +1028,7 @@
                 "issues": "https://github.com/novaris-dev/framework/issues",
                 "source": "https://github.com/novaris-dev/framework/tree/develop"
             },
-            "time": "2026-09-30T21:49:42+00:00"
+            "time": "2026-09-30T23:44:11+00:00"
         },
         {
             "name": "phpoption/phpoption",
