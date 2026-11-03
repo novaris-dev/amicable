@@ -1,14 +1,14 @@
 .app {
 
 	&__footer {
-		background    : #fcfcfc;
-		border-top    : 0.063rem solid #f3f3f3;
+		background    : var( --color-surface );
+		border-top    : 0.063rem solid var( --color-divider );
 		padding       : 0.5rem;
 		text-align    : center;
 	}
 
 	&__footer-info {
-		color       : #959595;
+		color       : var( --color-muted );
 		line-height : 1.8em;
 	}
 }

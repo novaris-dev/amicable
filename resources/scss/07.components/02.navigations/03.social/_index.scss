@@ -29,7 +29,7 @@
                 svg {
                     width: 25px; /* Smaller SVG size */
                     height: 25px;
-                    fill: #ffffff; /* White fill color for SVG */
+                    fill: var( --color-white ); /* White fill color for SVG */
                     color: black;
                 }
             }

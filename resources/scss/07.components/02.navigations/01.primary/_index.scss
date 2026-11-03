@@ -3,10 +3,10 @@
 @media screen and ( max-width: 768px ) {
 
 	.menu-toggle {
-		background  : #000000;
+		background  : var( --color-black );
 		border      : none;
 		bottom      : 1.125rem;
-		color       : #ffffff;
+		color       : var( --color-white );
 		cursor      : pointer;
 		font-family : fonts.font-family( 'primary' );
 		left        : 1.125rem;
@@ -25,7 +25,7 @@
 	}
 
 	.menu-items {
-		background     : #000000;
+		background     : var( --color-black );
 		bottom         : 3.5rem;
 		left           : 1.25rem;
 		margin         : 0;
@@ -70,7 +70,7 @@
 		}
 
 		&__item-anchor {
-			color           : #ffffff;
+			color           : var( --color-white );
 			text-decoration : none;
 		}
 
@@ -83,12 +83,12 @@
 			right      : 1.25rem;
 
 			.fontawesome {
-				color     : #ffffff;
+				color     : var( --color-white );
 				font-size : 1.125rem;
 				padding   : 0.6rem;
 
 				&::before {
-					border       : solid #ffffff;
+					border       : solid var( --color-white );
 					border-width : 0 0.25rem 0.25rem 0;
 					content      : '';
 					cursor       : pointer;
@@ -140,7 +140,7 @@
 			width    : max-content;
 
 			&:hover {
-				color                     : #ffffff;
+				color                     : var( --color-white );
 				text-decoration           : underline;
 				text-decoration-thickness : 2px;
 				text-underline-offset     : 4px;
@@ -149,7 +149,7 @@
 			&--has-children {
 
 				> .menu-items__item-anchor::after {
-					border       : solid #000000;
+					border       : solid var( --color-black );
 					border-width : 0 0.25rem 0.25rem 0;
 					content      : '';
 					display      : inline-block;
@@ -172,7 +172,7 @@
 			&--current {
 
 				> .menu-items__item-anchor {
-					color                     : #000000;
+					color                     : var( --color-black );
 					padding                   : 0.5rem 1rem;
 					text-decoration           : underline;
 					text-decoration-thickness : 2px;
@@ -182,7 +182,7 @@
 				.menu-items__sub-menu {
 
 					.menu-items__item-anchor {
-						color                     : #ffffff;
+						color                     : var( --color-white );
 						padding                   : 0.5rem 1rem;
 						text-decoration           : none;
 						text-decoration-thickness : 0;
@@ -207,7 +207,7 @@
 		}
 
 		&__item-anchor {
-			color           : #000000;
+			color           : var( --color-black );
 			padding         : 0.5rem 1rem;
 			text-decoration : none;
 		}
@@ -217,7 +217,7 @@
 		}
 
 		&__sub-menu {
-			background      : #000000;
+			background      : var( --color-black );
 			left            : 0;
 			list-style-type : none;
 			margin          : 0.7rem 0;
@@ -238,7 +238,7 @@
 			}
 
 			.menu-items__item-anchor {
-				color : #ffffff;
+				color : var( --color-white );
 			}
 		}
 	}

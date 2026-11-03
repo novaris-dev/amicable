@@ -2,6 +2,13 @@
 
 All notable changes to Amicable will be documented in this file.
 
+## [Unreleased]
+
+### Changed
+
+- The theme's styles now use the color settings instead of hard-coded colors (57 values in the elements, layouts, and components). Each one uses the setting with the same value, so the theme looks the same, but changing a color in `01.settings/03.colors` (or its `--color-*` property) now updates it everywhere. See the Colors section of `resources/scss/README.md`.
+- Added a `border-light` color (`#dddddd`, pagination borders).
+
 ## [0.1.9] - 11.03.2026
 
 ### Added

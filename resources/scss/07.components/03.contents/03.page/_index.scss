@@ -16,11 +16,11 @@
 			max-width: 640px;
 
             .entry-title {
-                color: #000000;
+                color: var( --color-heading );
 				margin: 0;
 
                 a {
-                    color: #ffffff;
+                    color: var( --color-white );
 					text-decoration: none;
 
 					&:hover {
@@ -30,18 +30,18 @@
             }
 
             .entry-metadata {
-                color: #959595;
+                color: var( --color-muted );
 				font-family: fonts.font-family( 'date' );
 				font-size: 1.625rem;
 
                 .fa-user {
-                    color: #959595;
+                    color: var( --color-muted );
                     padding-right: 0.313em;
                 }
 
                 .fa-calendar-alt,
                 .fa-comment {
-                    color: #959595;
+                    color: var( --color-muted );
                     padding: 0 0.313em 0 0.688em;
                 }
             }
@@ -83,7 +83,7 @@
 			margin-top: 0;
 
 			.post {
-				background: #ffffff;
+				background: var( --color-white );
 				box-shadow: 0 0.375rem 0.375rem hsl( 0deg 0% 0% / 0.3 );
 				padding: 1.125rem;
 
@@ -102,7 +102,7 @@
 						padding: 0;
 
 						a {
-							color: #000000;
+							color: var( --color-heading );
 							text-decoration: none;
 						}
 					}

@@ -21,7 +21,7 @@ Every helper class comes from a scale in `01.settings`, filled with the values A
 
 | Setting | Values | Classes |
 |---|---|---|
-| `$colors` (03.colors) | text, link, heading, muted, muted-dark, surface, divider, border, code, dark, light, gray, error, black, white | `.text-{color}`, `.bg-{color}`, `.border-{color}` |
+| `$colors` (03.colors) | text, link, heading, muted, muted-dark, surface, divider, border, border-light, code, dark, light, gray, error, black, white | `.text-{color}`, `.bg-{color}`, `.border-{color}` |
 | `$spacing-steps`, `$spacing-names` (08.spacings) | 0.25rem steps 0, 1, 2, 3, 4, 6, 8, 9, 12; `gutter` = 1.125rem; `px` | `.m-*`, `.p-*`, `.mt-*`… `.gap-*`, `.gap-gutter` |
 | `$font-families` (06.fonts) | heading (Fira Sans), primary (Merriweather), date (Tangerine), code (JetBrains Mono) | `.font-heading`, `.font-date`… |
 | `$font-sizes`, `$font-weights`, `$line-heights` | xs–5xl; normal, semibold, bold; none–relaxed | `.text-sm`, `.font-bold`, `.leading-tight` |
@@ -72,6 +72,28 @@ To add more breakpoints, list them in `$utility-breakpoints` (`01.settings/09.ut
 ```
 
 Arguments: class prefix (or `null` for the key alone), CSS property (or a list), a map of `suffix: value`, and `$responsive`.
+
+## Colors
+
+The theme's own styles read their colors from `$colors` through custom properties, so one change updates every place a color is used:
+
+| Change | Updates |
+|---|---|
+| `text` | body text |
+| `link` | links |
+| `heading` | post and page titles |
+| `muted` | dates, meta, header tagline, footer text |
+| `surface` / `divider` | header and footer background and lines |
+| `border` / `gray` | comment borders and backgrounds |
+| `dark` / `light` / `border-light` | pagination |
+| `black` / `white` | the menu |
+| `code` | code block accent |
+
+Edit the value in `01.settings/03.colors` and rebuild, or override it at run time without a rebuild:
+
+```css
+:root { --color-link: #e63946; }
+```
 
 ## Fonts
 
