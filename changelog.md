@@ -2,7 +2,7 @@
 
 All notable changes to Amicable will be documented in this file.
 
-## [Unreleased]
+## [0.2.0] - 11.03.2026
 
 ### Added
 
@@ -20,8 +20,9 @@ All notable changes to Amicable will be documented in this file.
 
 The theme's look is unchanged: no existing styles were edited.
 
-## [0.1.8 ]- 09.30.2026
-## Fixed
+## [0.1.8] - 09.30.2026
+
+### Fixed
 CSS and JavaScript returned 404 when Amicable runs as a private app, such as its own development site, so pages were unstyled and the mobile menu button did not respond. Fixed by updating to the latest Novaris Framework, which serves private app assets from public/assets again and rewrites those URLs to /assets/ in static exports.
 
 ## [0.1.7] - 09.30.2026
