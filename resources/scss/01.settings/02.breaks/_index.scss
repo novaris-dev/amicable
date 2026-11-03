@@ -1,0 +1,21 @@
+////
+/// Breakpoints
+///
+/// Where Amicable's layout changes. Each value is the width where the wider
+/// layout starts:
+///
+///   sm  641px   above small phones (pagination tightens at 640px and below)
+///   md  769px   desktop menu and layout (mobile is 768px and below)
+///   lg  1170px  full content width
+///
+/// The names are also the prefixes of responsive utility classes:
+/// `.md:flex` applies `display: flex` from 769px up.
+///
+/// @group Settings
+////
+
+$breakpoints: (
+	sm: 641px,
+	md: 769px,
+	lg: 1170px
+) !default;

@@ -1,0 +1,14 @@
+////
+/// Dimensions
+///
+/// Amicable's content widths. Each becomes a custom property
+/// (`--width-narrow`) and a max-width class (`.max-w-narrow`).
+///
+/// @group Settings
+////
+
+$content-widths: (
+	narrow: 640px,  // reading width
+	medium: 896px,  // galleries
+	wide:   1170px  // full layout
+) !default;

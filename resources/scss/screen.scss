@@ -9,7 +9,7 @@
 /// @link   https://luthemes.com/portfolio/prismatic
 ////
 
-@use '01.settings/fonts' as fonts;
+@use '01.settings/06.fonts' as fonts;
 
 // -----------------------------------------------------------------------------
 // Import settings.
@@ -17,7 +17,7 @@
 //
 // Settings handle the configuration and variables.
 
-@forward '01.settings/__index';
+@forward '01.settings';
 
 // -----------------------------------------------------------------------------
 // Import tools.
@@ -26,7 +26,7 @@
 // These are used throughout the code but don't output CSS on their own. Things
 // like functions, mixins, and extensions go here.
 
-@forward '02.tools/__index';
+@forward '02.tools';
 
 // -----------------------------------------------------------------------------
 // Import generic styles.
@@ -36,7 +36,7 @@
 // fonts, etc. are best handled here. These are the base styles that other
 // styles will build upon.
 
-@forward '03.generics/__index';
+@forward '03.generics';
 
 // -----------------------------------------------------------------------------
 // Import element styles.
@@ -46,7 +46,7 @@
 // The styles in this folder should only handle the defaults. More specific
 // styles should be handled later in the cascade.
 
-@forward '04.elements/__index';
+@forward '04.elements';
 
 // -----------------------------------------------------------------------------
 // Import object styles.
@@ -54,7 +54,7 @@
 //
 // Undecorated design patterns.
 
-@forward '05.objects/__index';
+@forward '05.objects';
 
 // -----------------------------------------------------------------------------
 // Import layout styles.
@@ -62,7 +62,7 @@
 //
 // global layouts.
 
-@forward '06.layouts/__index';
+@forward '06.layouts';
 
 // -----------------------------------------------------------------------------
 // Import component styles.
@@ -72,7 +72,7 @@
 // fonts, etc. are best handled here. These are the base styles that other
 // styles will build upon.
 
-@forward '07.components/__index';
+@forward '07.components';
 
 // -----------------------------------------------------------------------------
 // Import utility styles.
@@ -82,7 +82,7 @@
 // necessary, this is the only place where `!important` rules should go, but
 // only if necessary.
 
-@forward '08.utilities/__index';
+@forward '08.utilities';
 
 .breadcrumbs {
 	font-size     : 0.875rem;

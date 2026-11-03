@@ -1,0 +1,98 @@
+////
+/// Utility generator
+///
+/// Builds helper classes from a map, so the classes always match the
+/// settings. One call makes one group of classes:
+///
+///   @include utility( mt, margin-top, $spacings );
+///   // .mt-0 { margin-top: 0 }  .mt-1 { margin-top: .25rem }  …
+///
+///   @include utility( mx, ( margin-left, margin-right ), $spacings );
+///   // .mx-4 { margin-left: 1rem; margin-right: 1rem }  …
+///
+///   @include utility( null, display, ( block: block, hidden: none ) );
+///   // .block { display: block }  .hidden { display: none }
+///
+///   @include utility( text, text-align, ( center: center ), $responsive: true );
+///   // .text-center … and .md:text-center, .lg:text-center (one per
+///   // breakpoint in $utility-breakpoints)
+///
+/// Use it in your own files too, for any property and any values.
+///
+/// @group Tools
+////
+
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:string';
+@use '../../01.settings/09.utilities' as options;
+@use '../01.breakpoints' as bp;
+
+/// The class name for one entry: `mt` + `4` → `mt-4`; no prefix → `4`.
+@function _class-name( $prefix, $key ) {
+	@if $prefix == null or $prefix == '' {
+		@return '#{ $key }';
+	}
+
+	@return '#{ $prefix }-#{ $key }';
+}
+
+/// Prints one class per map entry. `$variant` is a breakpoint name for
+/// responsive copies (`md` → `.md\:mt-4`).
+@mixin _rules( $prefix, $properties, $values, $variant: null ) {
+	@each $key, $value in $values {
+		$class: _class-name( $prefix, $key );
+
+		@if $variant {
+			// `\:` escapes the colon, so the HTML class is `md:mt-4`.
+			$class: '#{ $variant }\\:#{ $class }';
+		}
+
+		.#{ $class } {
+			@each $property in $properties {
+				@if options.$utilities-important {
+					#{ $property }: $value !important;
+				} @else {
+					#{ $property }: $value;
+				}
+			}
+		}
+	}
+}
+
+/// Generates a group of utility classes.
+///
+/// @param {string | null} $prefix     Class prefix (`mt`), or null to use
+///                                    the keys alone (`.flex`)
+/// @param {string | list} $properties CSS property, or a list of them
+/// @param {map}           $values     Class suffix → CSS value
+/// @param {bool}          $responsive Also print `.md:…` copies for each
+///                                    breakpoint in `$utility-breakpoints`
+@mixin utility( $prefix, $properties, $values, $responsive: false ) {
+	@if meta.type-of( $values ) != 'map' {
+		@error 'utility( #{ $prefix } ): $values must be a map, got #{ meta.type-of( $values ) }.';
+	}
+
+	@include _rules( $prefix, $properties, $values );
+
+	@if $responsive {
+		@each $name in options.$utility-breakpoints {
+			@include bp.up( $name ) {
+				@include _rules( $prefix, $properties, $values, $name );
+			}
+		}
+	}
+}
+
+/// Turns a settings map into custom-property references:
+/// `vars( color, ( primary: #00f ) )` → `( primary: var( --color-primary ) )`.
+/// Used so color and font classes follow run-time changes.
+@function vars( $name, $map ) {
+	$result: ();
+
+	@each $key, $value in $map {
+		$result: map.merge( $result, ( $key: string.unquote( 'var( --#{ $name }-#{ $key } )' ) ) );
+	}
+
+	@return $result;
+}

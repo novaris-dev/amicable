@@ -1,0 +1,24 @@
+////
+/// Borders
+///
+/// Border widths and corner radii from Amicable's design. Each entry becomes
+/// a utility class: `$border-widths` → `.border-1`, `$radii` → `.rounded-lg`.
+///
+/// @group Settings
+////
+
+$border-widths: (
+	0: 0,
+	1: 0.063rem, // the theme's hairline borders
+	4: 0.25rem,  // blockquote edge
+	6: 6px       // code block edge
+) !default;
+
+$radii: (
+	none: 0,
+	sm:   3px,
+	base: 0.25rem,
+	md:   5px,
+	lg:   0.75rem,
+	full: 9999px
+) !default;

@@ -1,0 +1,23 @@
+////
+/// Effects
+///
+/// Shadows (`.shadow-md`) and opacities (`.opacity-50`) from Amicable's
+/// design.
+///
+/// @group Settings
+////
+
+@use 'sass:string';
+
+$shadows: (
+	none: none,
+	sm:   string.unquote( '0 4px 6px -1px rgba( 0, 0, 0, 0.1 ), 0 2px 4px -1px rgba( 0, 0, 0, 0.06 )' ), // code blocks
+	md:   string.unquote( '0 0.375rem 0.375rem hsl( 0deg 0% 0% / 0.3 )' )                               // menus, cards
+) !default;
+
+$opacities: (
+	0:   0,
+	50:  0.5,
+	70:  0.7,
+	100: 1
+) !default;

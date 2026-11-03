@@ -1,0 +1,26 @@
+////
+/// Helpers
+///
+///   .clearfix   contains floats
+///   .truncate   one line, cut off with an ellipsis
+///   .cursor-pointer, .select-none
+///
+/// @group Utilities
+////
+
+@use '../../02.tools' as tools;
+
+.clearfix::after {
+	clear: both;
+	content: '';
+	display: table;
+}
+
+.truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+@include tools.utility( cursor, cursor, ( pointer: pointer, default: default ) );
+@include tools.utility( select, user-select, ( none: none, all: all ) );

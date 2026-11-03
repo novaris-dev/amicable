@@ -1,0 +1,19 @@
+////
+/// Sizing
+///
+///   .w-{size}       from `$sizes`: .w-full, .w-half (responsive)
+///   .h-{size}       from `$sizes`: .h-auto, .h-full
+///   .max-w-{width}  from `$content-widths`: .max-w-narrow
+///   .w-screen, .h-screen, .min-h-screen
+///
+/// @group Utilities
+////
+
+@use 'sass:map';
+@use '../../01.settings' as settings;
+@use '../../02.tools' as tools;
+
+@include tools.utility( w, width, map.merge( settings.$sizes, ( screen: 100vw ) ), $responsive: true );
+@include tools.utility( h, height, map.merge( settings.$sizes, ( screen: 100vh ) ) );
+@include tools.utility( min-h, min-height, ( screen: 100vh ) );
+@include tools.utility( max-w, max-width, map.merge( tools.vars( width, settings.$content-widths ), ( full: 100%, none: none ) ) );

@@ -1,0 +1,38 @@
+////
+/// Spacings
+///
+/// One spacing scale for margin, padding, and gap. Steps are multiples of
+/// `$spacing-unit` (0.25rem = 4px), so `.mt-4` is 1rem and `.p-6` is 1.5rem.
+///
+/// The steps are the spacings Amicable's design uses: 0.25rem, 0.5rem,
+/// 0.75rem, 1rem, 1.5rem, 2rem, 2.25rem, and 3rem. `gutter` is the theme's
+/// 1.125rem gap between grid items and content blocks: `.gap-gutter`.
+///
+/// @group Settings
+////
+
+@use 'sass:map';
+
+$spacing-unit: 0.25rem !default;
+
+/// Steps to generate. Add a number to get a new class: adding 5 gives
+/// `.mt-5`, `.p-5`, `.gap-5`… (5 × 0.25rem).
+$spacing-steps: ( 0, 1, 2, 3, 4, 6, 8, 9, 12 ) !default;
+
+/// Spacings with names instead of steps.
+$spacing-names: (
+	gutter: 1.125rem
+) !default;
+
+/// The scale itself, built from the steps and names, plus `px` (1px).
+$spacings: ( px: 1px );
+
+@each $step in $spacing-steps {
+	@if $step == 0 {
+		$spacings: map.merge( $spacings, ( 0: 0 ) );
+	} @else {
+		$spacings: map.merge( $spacings, ( $step: $spacing-unit * $step ) );
+	}
+}
+
+$spacings: map.merge( $spacings, $spacing-names );

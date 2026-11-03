@@ -1,0 +1,54 @@
+////
+/// Spacings
+///
+/// Margin, padding, and gap from the `$spacings` scale (1 = 0.25rem, plus
+/// `gutter` = 1.125rem):
+///
+///   .m-4  .mt-4  .mr-4  .mb-4  .ml-4  .mx-4  .my-4    margin
+///   .p-4  .pt-4  .pr-4  .pb-4  .pl-4  .px-4  .py-4    padding
+///   .gap-4  .gap-gutter  .gap-x-4  .gap-y-4           flex/grid gaps
+///   .mx-auto  .ml-auto  .mr-auto                      push or center
+///
+/// All are responsive: `.p-4 .md:p-8`.
+///
+/// @group Utilities
+////
+
+@use 'sass:list';
+@use 'sass:map';
+@use '../../01.settings' as settings;
+@use '../../02.tools' as tools;
+
+$_margins: map.merge( settings.$spacings, ( auto: auto ) );
+
+$_sides: (
+	'':  null,
+	t:   top,
+	r:   right,
+	b:   bottom,
+	l:   left,
+	x:   ( left, right ),
+	y:   ( top, bottom )
+);
+
+@each $suffix, $sides in $_sides {
+	$margin:  margin;
+	$padding: padding;
+
+	@if $sides {
+		$margin:  ();
+		$padding: ();
+
+		@each $side in $sides {
+			$margin:  list.append( $margin, margin-#{ $side }, comma );
+			$padding: list.append( $padding, padding-#{ $side }, comma );
+		}
+	}
+
+	@include tools.utility( m#{ $suffix }, $margin, $_margins, $responsive: true );
+	@include tools.utility( p#{ $suffix }, $padding, settings.$spacings, $responsive: true );
+}
+
+@include tools.utility( gap, gap, settings.$spacings, $responsive: true );
+@include tools.utility( gap-x, column-gap, settings.$spacings, $responsive: true );
+@include tools.utility( gap-y, row-gap, settings.$spacings, $responsive: true );

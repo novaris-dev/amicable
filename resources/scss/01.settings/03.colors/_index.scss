@@ -1,0 +1,113 @@
+////
+/// Colors
+///
+/// `$colors` is Amicable's design palette: the colors the theme's styles use.
+/// Each entry becomes:
+///
+///   - a CSS custom property: `muted` → `--color-muted`
+///   - text, background, and border classes: `.text-muted`, `.bg-surface`,
+///     `.border-divider`
+///
+/// The classes use the custom properties, so a color can be changed at run
+/// time: `:root { --color-link: #e63946; }`.
+///
+/// @group Settings
+////
+
+@use 'sass:map';
+
+$colors: (
+	text:       #677d89, // body text
+	link:       #0369a1, // links
+	heading:    #000000, // headings, titles
+	muted:      #959595, // dates, meta, footer text
+	muted-dark: #757575, // header links
+	surface:    #fcfcfc, // header and footer background
+	divider:    #f3f3f3, // header and footer lines
+	border:     #cccccc, // comment form and list borders
+	code:       #e9f3f8, // code block accent
+	dark:       #333333, // pagination
+	light:      #f7f7f7, // pagination background
+	gray:       #eeeeee, // comment backgrounds
+	error:      #ff0000, // required fields
+	black:      #000000,
+	white:      #ffffff
+) !default;
+
+// -----------------------------------------------------------------------------
+// Named palette
+// -----------------------------------------------------------------------------
+//
+// A general palette, available as `color( coral )` in your own styles. It
+// doesn't generate classes.
+
+$aqua:     #00ffff;
+$bisque:   #ffe4c4;
+$black:    #000000;
+$blue:     #0000ff;
+$coral:    #ff7f50;
+$cornsilk: #fff8dc;
+$gold:     #ffd700;
+$green:    #008000;
+$indigo:   #0c0b0c;
+$lavender: #e6e6fa;
+$lime:     #00ff00;
+$magenta:  #ff00ff;
+$maroon:   #800000;
+$navy:     #000080;
+$olive:    #808000;
+$orange:   #ffa500;
+$pink:     #ffc0cb;
+$plum:     #dda0dd;
+$purple:   #800080;
+$red:      #ff0000;
+$salmon:   #fa8072;
+$silver:   #eeeeee;
+$tan:      #d2b48c;
+$teal:     #008080;
+$white:    #ffffff;
+$yellow:   #ffff00;
+
+
+@function colors() {
+	@return (
+		aqua     : $aqua,
+		bisque   : $bisque,
+		black    : $black,
+		blue     : $blue,
+		coral    : $coral,
+		cornsilk : $cornsilk,
+		gold     : $gold,
+		green    : $green,
+		indigo   : $indigo,
+		lavender : $lavender,
+		lime     : $lime,
+		magenta  : $magenta,
+		maroon   : $maroon,
+		navy     : $navy,
+		olive    : $olive,
+		orange   : $orange,
+		pink     : $pink,
+		plum     : $plum,
+		purple   : $purple,
+		red      : $red,
+		salmon   : $salmon,
+		silver   : $silver,
+		tan      : $tan,
+		teal     : $teal,
+		white    : $white,
+		yellow   : $yellow,
+	);
+}
+
+/// Returns a single color value by name.
+///
+/// @since  1.0.0
+/// @access public
+/// @param  {string}  $name  Color name.
+/// @return {string}         Color value.
+
+@function color( $name ) {
+
+	@return map.get( colors(), $name );
+}

@@ -1,0 +1,25 @@
+////
+/// Media
+///
+/// Amicable's image defaults, then generated classes:
+///
+///   .object-cover, .object-contain   how an image fills its box
+///   .aspect-square, .aspect-video     fixed proportions
+///
+/// @group Utilities
+////
+
+@use 'sass:string';
+@use '../../02.tools' as tools;
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+	margin: 0;
+}
+
+@include tools.utility( object, object-fit, ( cover: cover, contain: contain ) );
+@include tools.utility( aspect, aspect-ratio, ( square: string.unquote( '1 / 1' ), video: string.unquote( '16 / 9' ) ) );

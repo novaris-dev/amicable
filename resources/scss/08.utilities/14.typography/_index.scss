@@ -1,0 +1,18 @@
+////
+/// Typography
+///
+///   .font-{family}   from `$font-families`: .font-heading, .font-date
+///   .text-{size}     from `$font-sizes`: .text-sm, .text-2xl
+///   .font-{weight}   from `$font-weights`: .font-semibold
+///   .leading-{lh}    from `$line-heights`: .leading-tight
+///
+/// @group Utilities
+////
+
+@use '../../01.settings' as settings;
+@use '../../02.tools' as tools;
+
+@include tools.utility( font, font-family, settings.$font-families );
+@include tools.utility( text, font-size, settings.$font-sizes );
+@include tools.utility( font, font-weight, settings.$font-weights );
+@include tools.utility( leading, line-height, settings.$line-heights );

@@ -1,0 +1,21 @@
+////
+/// Borders
+///
+///   .border            the theme's hairline (0.063rem solid `--color-border`)
+///   .border-{width}    from `$border-widths`: .border-1, .border-4
+///   .border-{color}    from `$colors`: .border-divider
+///   .rounded-{radius}  from `$radii`: .rounded-lg
+///
+/// @group Utilities
+////
+
+@use '../../01.settings' as settings;
+@use '../../02.tools' as tools;
+
+.border {
+	border: 0.063rem solid var( --color-border );
+}
+
+@include tools.utility( border, border-width, settings.$border-widths );
+@include tools.utility( border, border-color, tools.vars( color, settings.$colors ) );
+@include tools.utility( rounded, border-radius, settings.$radii );

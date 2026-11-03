@@ -1,0 +1,21 @@
+////
+/// Sizings
+///
+/// Widths and heights as fractions or keywords: `.w-full`, `.w-half`,
+/// `.h-auto`. (Content max-widths live in 04.dimensions.)
+///
+/// @group Settings
+////
+
+$sizes: (
+	auto:           auto,
+	full:           100%,
+	half:           50%,
+	third:          33.333333%,
+	two-thirds:     66.666667%,
+	quarter:        25%,
+	three-quarters: 75%,
+	fit:            fit-content,
+	min:            min-content,
+	max:            max-content
+) !default;
