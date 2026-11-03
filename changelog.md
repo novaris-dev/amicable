@@ -2,6 +2,13 @@
 
 All notable changes to Amicable will be documented in this file.
 
+## [Unreleased]
+
+### Changed
+
+- Updated the Novaris Framework from 1.0.1 to 1.0.3 in `composer.lock`. 1.0.3 fixes `featured_image()`, which returned `null` for themes like Amicable that turn on featured images in `config/app.php`. Amicable's templates call `thumbnail()` directly, so nothing else changes.
+- `theme.json` now has a `$schema` line, so editors such as VS Code autocomplete its fields and warn about missing or misspelled ones.
+
 ## [0.2.0] - 11.03.2026
 
 ### Changed
