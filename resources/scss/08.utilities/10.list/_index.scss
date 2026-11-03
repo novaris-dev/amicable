@@ -1,0 +1,18 @@
+////
+/// Lists
+///
+/// `.list-none` removes bullets (and the indent); `.list-disc`,
+/// `.list-decimal` bring them back; `.list-inside` moves markers inside.
+///
+/// @group Utilities
+////
+
+@use '../../02.tools' as tools;
+
+.list-none {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+@include tools.utility( list, list-style-type, ( disc: disc, decimal: decimal ) );
+@include tools.utility( list, list-style-position, ( inside: inside, outside: outside ) );

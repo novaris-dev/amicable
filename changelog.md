@@ -2,6 +2,22 @@
 
 All notable changes to Amicable will be documented in this file.
 
+## [Unreleased]
+
+### Added
+
+- Helper classes generated from the SCSS settings, using the same generator as novaris-dev/novaris. The settings hold Amicable's own design values, so the classes match the theme: `.text-muted`, `.bg-surface`, `.border-divider`, `.font-date`, `.gap-gutter`, `.md:grid-cols-3`… See `resources/scss/README.md`.
+- Settings scales in `resources/scss/01.settings`: Amicable's color palette, breakpoints (641px, 769px, 1170px), content widths (640px, 896px, 1170px), border widths and radii, shadows, opacities, font sizes, weights and line heights, and a spacing scale with a `gutter` (1.125rem) step.
+- `up()` / `down()` breakpoint mixins and the `utility()` generator in `02.tools`.
+- `03.generics/03.tokens`: the colors and content widths as CSS custom properties (`--color-muted`, `--width-wide`).
+
+### Changed
+
+- The SCSS folders use numbered folders with an `_index.scss` per piece, matching novaris-dev/novaris (`01.settings/03.colors/_index.scss` instead of `01.settings/_colors.scss`).
+- The named color palette (aqua, coral…) moved from the spacings settings to the colors settings, where it belongs. `colors()` and `color()` work as before.
+
+The theme's look is unchanged: no existing styles were edited.
+
 ## [0.1.8 ]- 09.30.2026
 ## Fixed
 CSS and JavaScript returned 404 when Amicable runs as a private app, such as its own development site, so pages were unstyled and the mobile menu button did not respond. Fixed by updating to the latest Novaris Framework, which serves private app assets from public/assets again and rewrites those URLs to /assets/ in static exports.

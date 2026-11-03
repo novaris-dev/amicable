@@ -1,0 +1,46 @@
+////
+/// Layout
+///
+///   .block, .inline-block, .inline, .flex, .inline-flex, .grid, .hidden
+///   .static, .relative, .absolute, .fixed, .sticky
+///   .overflow-{hidden | auto | visible}
+///   .container   centered, `--width-wide` (1170px), with the 1.125rem gutter
+///
+/// Display is responsive: `.hidden .md:block` hides on phones only.
+///
+/// @group Utilities
+////
+
+@use '../../02.tools' as tools;
+
+@include tools.utility( null, display, (
+	block:        block,
+	inline-block: inline-block,
+	inline:       inline,
+	flex:         flex,
+	inline-flex:  inline-flex,
+	grid:         grid,
+	hidden:       none
+), $responsive: true );
+
+@include tools.utility( null, position, (
+	static:   static,
+	relative: relative,
+	absolute: absolute,
+	fixed:    fixed,
+	sticky:   sticky
+) );
+
+@include tools.utility( overflow, overflow, (
+	hidden:  hidden,
+	auto:    auto,
+	visible: visible
+) );
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var( --width-wide );
+	padding-left: 1.125rem;
+	padding-right: 1.125rem;
+}

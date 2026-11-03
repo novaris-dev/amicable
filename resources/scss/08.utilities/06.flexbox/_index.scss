@@ -1,0 +1,53 @@
+////
+/// Flexbox
+///
+///   .flex-row, .flex-col, .flex-wrap
+///   .items-{start | center | end | stretch | baseline}
+///   .justify-{start | center | end | between | around}
+///   .flex-1, .grow, .shrink-0
+///
+/// Direction, wrapping, and alignment are responsive: `.md:flex-row`.
+/// Turn an element into a flex container with `.flex` (09.layout) and set
+/// gaps with `.gap-{n}` (15.spacings).
+///
+/// @group Utilities
+////
+
+@use '../../02.tools' as tools;
+
+@include tools.utility( flex, flex-direction, (
+	row:         row,
+	row-reverse: row-reverse,
+	col:         column,
+	col-reverse: column-reverse
+), $responsive: true );
+
+@include tools.utility( flex, flex-wrap, (
+	wrap:   wrap,
+	nowrap: nowrap
+), $responsive: true );
+
+@include tools.utility( items, align-items, (
+	start:    flex-start,
+	center:   center,
+	end:      flex-end,
+	stretch:  stretch,
+	baseline: baseline
+), $responsive: true );
+
+@include tools.utility( justify, justify-content, (
+	start:   flex-start,
+	center:  center,
+	end:     flex-end,
+	between: space-between,
+	around:  space-around
+), $responsive: true );
+
+@include tools.utility( flex, flex, (
+	1:    1 1 0%,
+	auto: 1 1 auto,
+	none: none
+) );
+
+@include tools.utility( null, flex-grow, ( grow: 1 ) );
+@include tools.utility( shrink, flex-shrink, ( 0: 0 ) );

@@ -1,0 +1,70 @@
+////
+/// Grid
+///
+/// `.grid-col-{1–10}` (display grid, equal columns, 1.125rem gap) and
+/// `.gallery-columns-3` are Amicable's own grid classes. The generated
+/// `.grid-cols-*` / `.col-span-*` classes follow below.
+///
+/// @group Utilities
+////
+
+@use 'sass:map';
+@use 'sass:string';
+@use '../../02.tools' as tools;
+
+$grid-columns: (
+	grid-col-1: repeat( 1, 1fr ),
+	grid-col-2: repeat( 2, 1fr ),
+	grid-col-3: repeat( 3, 1fr ),
+	grid-col-4: repeat( 4, 1fr ),
+	grid-col-5: repeat( 5, 1fr ),
+	grid-col-6: repeat( 6, 1fr ),
+	grid-col-7: repeat( 7, 1fr ),
+	grid-col-8: repeat( 8, 1fr ),
+	grid-col-9: repeat( 9, 1fr ),
+	grid-col-10: repeat( 10, 1fr ),
+);
+
+@each $name, $value in $grid-columns {
+	.#{ $name } {
+		display: grid;
+		grid-template-columns: $value;
+		grid-gap: 1.125rem;
+		padding: 0;
+	}
+}
+
+
+.gallery-columns-3 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1.125rem;
+	max-width: 896px;
+}
+
+
+// -----------------------------------------------------------------------------
+// Generated grid classes
+// -----------------------------------------------------------------------------
+//
+//   .grid-cols-{1–12}  equal columns (needs `.grid` from 09.layout)
+//   .col-span-{1–12}   an item spanning several columns; .col-span-full
+//
+// Both are responsive: `.grid .grid-cols-1 .md:grid-cols-3 .gap-gutter`.
+// Unlike `.grid-col-*` above, they only set the columns, so they combine
+// with any gap.
+
+
+/// How many columns to generate classes for.
+$grid-column-count: 12 !default;
+
+$_cols: ();
+$_spans: ( full: string.unquote( '1 / -1' ) );
+
+@for $i from 1 through $grid-column-count {
+	$_cols:  map.merge( $_cols, ( $i: repeat( $i, minmax( 0, 1fr ) ) ) );
+	$_spans: map.merge( $_spans, ( $i: span $i ) );
+}
+
+@include tools.utility( grid-cols, grid-template-columns, $_cols, $responsive: true );
+@include tools.utility( col-span, grid-column, $_spans, $responsive: true );

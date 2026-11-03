@@ -1,0 +1,13 @@
+////
+/// Effects
+///
+/// `.shadow-{size}` from `$shadows`, `.opacity-{n}` from `$opacities`.
+///
+/// @group Utilities
+////
+
+@use '../../01.settings' as settings;
+@use '../../02.tools' as tools;
+
+@include tools.utility( shadow, box-shadow, settings.$shadows );
+@include tools.utility( opacity, opacity, settings.$opacities );

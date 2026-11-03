@@ -1,0 +1,27 @@
+////
+/// Tokens
+///
+/// Turns the settings into CSS custom properties, so they can change at run
+/// time (a Customizer setting, a child theme) without rebuilding:
+///
+///   --color-text, --color-link, --color-muted, …   from $colors
+///   --width-narrow, --width-medium, --width-wide    from $content-widths
+///
+/// The color utility classes use these. Fonts already have their own
+/// run-time overrides (`--font-family-heading` and friends, see 06.fonts),
+/// so they aren't redefined here.
+///
+/// @group Generics
+////
+
+@use '../../01.settings' as settings;
+
+:root {
+	@each $name, $value in settings.$colors {
+		--color-#{ $name }: #{ $value };
+	}
+
+	@each $name, $value in settings.$content-widths {
+		--width-#{ $name }: #{ $value };
+	}
+}

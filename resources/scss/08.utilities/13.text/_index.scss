@@ -1,0 +1,35 @@
+////
+/// Text
+///
+///   .text-{left | center | right | justify}   (responsive)
+///   .text-{color}       from `$colors`: .text-muted, .text-link
+///   .uppercase, .lowercase, .capitalize
+///   .underline, .no-underline, .italic
+///
+/// @group Utilities
+////
+
+@use '../../01.settings' as settings;
+@use '../../02.tools' as tools;
+
+@include tools.utility( text, text-align, (
+	left:    left,
+	center:  center,
+	right:   right,
+	justify: justify
+), $responsive: true );
+
+@include tools.utility( text, color, tools.vars( color, settings.$colors ) );
+
+@include tools.utility( null, text-transform, (
+	uppercase:  uppercase,
+	lowercase:  lowercase,
+	capitalize: capitalize
+) );
+
+@include tools.utility( null, text-decoration-line, (
+	underline:    underline,
+	no-underline: none
+) );
+
+@include tools.utility( null, font-style, ( italic: italic ) );

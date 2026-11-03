@@ -1,0 +1,17 @@
+////
+/// Utility options
+///
+/// How the generated helper classes are built (see 02.tools and
+/// 08.utilities).
+///
+/// @group Settings
+////
+
+/// Which breakpoints get responsive classes (`.md:flex`). Amicable switches
+/// layout once, at `md`, so that's the only one by default. Names come from
+/// `$breakpoints`.
+$utility-breakpoints: ( md ) !default;
+
+/// Add `!important` to every utility so it always wins over component
+/// styles.
+$utilities-important: false !default;

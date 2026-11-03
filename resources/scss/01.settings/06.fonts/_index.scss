@@ -1,0 +1,83 @@
+@use 'sass:map';
+
+@function fonts() {
+
+	@return (
+		fira-sans:       #{'Fira Sans', sans-serif},
+		inter:           #{Inter, sans-serif},
+		lato:            #{Lato, sans-serif},
+		montserrat:      #{Montserrat, sans-serif},
+		nunito-sans:     #{'Nunito Sans', sans-serif},
+		open-sans:       #{'Open Sans', sans-serif},
+		poppins:         #{Poppins, sans-serif},
+		raleway:         #{Raleway, sans-serif},
+		roboto:          #{Roboto, sans-serif},
+		lora:            #{Lora, Georgia, serif},
+		merriweather:    #{Merriweather, serif},
+		playfair-display: #{'Playfair Display', Georgia, serif},
+		libre-baskerville: #{'Libre Baskerville', Georgia, serif},
+		roboto-slab:     #{'Roboto Slab', Georgia, serif},
+		tangerine:       #{Tangerine, cursive},
+		source-code-pro: #{'Source Code Pro', Monaco, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace},
+		jetbrains-mono:  #{'JetBrains Mono', Monaco, Consolas, "Courier New", monospace},
+		roboto-mono:     #{'Roboto Mono', Monaco, Consolas, "Courier New", monospace},
+		space-mono:      #{'Space Mono', Monaco, Consolas, "Courier New", monospace}
+	);
+}
+
+@function font( $name ) {
+
+	@return map.get( fonts(), $name );
+}
+
+@function font-families() {
+
+	@return (
+		heading: var( --font-family-heading, #{font( fira-sans )} ),
+		primary: var( --font-family-primary, #{font( merriweather )} ),
+		date:    var( --font-family-date, #{font( tangerine )} ),
+		code:    var( --font-family-code, #{font( jetbrains-mono )} )
+	);
+}
+
+@function font-family( $name ) {
+
+	@return map.get( font-families(), $name );
+}
+
+// -----------------------------------------------------------------------------
+// Scales for the generated classes (08.utilities/14.typography)
+// -----------------------------------------------------------------------------
+
+/// Font roles → `.font-heading`, `.font-primary`, `.font-date`, `.font-code`.
+/// Same values as `font-family( 'heading' )` etc., including the
+/// `--font-family-*` run-time overrides.
+$font-families: font-families() !default;
+
+/// Font sizes Amicable uses → `.text-sm`, `.text-2xl`…
+$font-sizes: (
+	xs:   0.75rem,
+	sm:   0.875rem,
+	base: 1rem,
+	lg:   1.125rem,
+	xl:   1.25rem,
+	2xl:  1.5rem,
+	3xl:  1.75rem,
+	4xl:  2rem,
+	5xl:  2.5rem
+) !default;
+
+/// Font weights → `.font-normal`, `.font-semibold`, `.font-bold`.
+$font-weights: (
+	normal:   400,
+	semibold: 600,
+	bold:     700
+) !default;
+
+/// Line heights → `.leading-tight`…
+$line-heights: (
+	none:    1,
+	tight:   1.2,
+	normal:  1.6,
+	relaxed: 1.75
+) !default;

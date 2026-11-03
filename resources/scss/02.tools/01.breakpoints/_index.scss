@@ -1,0 +1,43 @@
+////
+/// Breakpoints
+///
+/// Mobile-first media queries by name, from `$breakpoints` in settings:
+///
+///   .entry {
+///     padding: 1rem;              // phones
+///
+///     @include up( md ) {         // 769px and wider (desktop)
+///       padding: 2rem;
+///     }
+///   }
+///
+/// @group Tools
+////
+
+@use 'sass:map';
+@use '../../01.settings/02.breaks' as settings;
+
+/// Returns a breakpoint's width by name. Fails the build on a typo and
+/// lists the valid names.
+@function breakpoint( $name ) {
+	@if not map.has-key( settings.$breakpoints, $name ) {
+		@error 'Unknown breakpoint `#{ $name }`. Use one of: #{ map.keys( settings.$breakpoints ) }.';
+	}
+
+	@return map.get( settings.$breakpoints, $name );
+}
+
+/// Styles for screens at least this wide.
+@mixin up( $name ) {
+	@media screen and ( min-width: #{ breakpoint( $name ) } ) {
+		@content;
+	}
+}
+
+/// Styles for screens narrower than this breakpoint. Stops just short of
+/// it, so `down( md )` and `up( md )` never overlap.
+@mixin down( $name ) {
+	@media screen and ( max-width: #{ breakpoint( $name ) - 0.02px } ) {
+		@content;
+	}
+}
