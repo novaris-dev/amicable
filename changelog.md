@@ -2,7 +2,7 @@
 
 All notable changes to Amicable will be documented in this file.
 
-## [0.2.0] - 11.03.2026
+## [0.1.9] - 11.03.2026
 
 ### Added
 
