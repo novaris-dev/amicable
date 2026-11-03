@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "023a5586f8755aee89af53d3864d79ba",
+    "content-hash": "3289d46668efc4de89e474eb33e15eb0",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -967,16 +967,16 @@
         },
         {
             "name": "novaris-dev/framework",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/novaris-dev/framework.git",
-                "reference": "a731f0a9267112177c720b48d18ca0f9acc85a24"
+                "reference": "c15b36bad6afececaa1aca769e85a6abbd2da26a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/novaris-dev/framework/zipball/a731f0a9267112177c720b48d18ca0f9acc85a24",
-                "reference": "a731f0a9267112177c720b48d18ca0f9acc85a24",
+                "url": "https://api.github.com/repos/novaris-dev/framework/zipball/c15b36bad6afececaa1aca769e85a6abbd2da26a",
+                "reference": "c15b36bad6afececaa1aca769e85a6abbd2da26a",
                 "shasum": ""
             },
             "require": {
@@ -984,7 +984,7 @@
                 "intervention/image": "^3",
                 "league/commonmark": "^2.10.1",
                 "league/config": "^1.2",
-                "php": ">=8.0",
+                "php": ">=8.1",
                 "symfony/http-foundation": "^6.0",
                 "symfony/var-dumper": "^6.0",
                 "symfony/yaml": "^6.0",
@@ -1025,9 +1025,9 @@
             "description": "Novaris Framework: The core foundation of the Novaris Content Management System (CMS), providing a robust and flexible architecture designed to power dynamic content-driven websites",
             "support": {
                 "issues": "https://github.com/novaris-dev/framework/issues",
-                "source": "https://github.com/novaris-dev/framework/tree/v1.0.0"
+                "source": "https://github.com/novaris-dev/framework/tree/v1.0.1"
             },
-            "time": "2026-09-30T23:44:11+00:00"
+            "time": "2026-10-20T15:45:08+00:00"
         },
         {
             "name": "phpoption/phpoption",

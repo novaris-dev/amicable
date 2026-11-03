@@ -14,6 +14,7 @@
 		}
 	},
     "require": {
+        "php": ">=8.2",
         "novaris-dev/framework": "^1.0"
     },
     "scripts": {

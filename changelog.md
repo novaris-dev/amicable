@@ -15,6 +15,8 @@ All notable changes to Amicable will be documented in this file.
 
 - The SCSS folders use numbered folders with an `_index.scss` per piece, matching novaris-dev/novaris (`01.settings/03.colors/_index.scss` instead of `01.settings/_colors.scss`).
 - The named color palette (aqua, coral…) moved from the spacings settings to the colors settings, where it belongs. `colors()` and `color()` work as before.
+- Requires PHP 8.2 or later (`composer.json` and readme). The readme said 8.0, but the dependencies need 8.1 and the locked `nette/utils` needs 8.2.
+- Updated `novaris-dev/framework` to 1.0.1.
 
 The theme's look is unchanged: no existing styles were edited.
 
