@@ -10,7 +10,7 @@ When using the standard Novaris starter application, Amicable is the default con
 
 ## Requirements
 
-- PHP 8.0 or later
+- PHP 8.2 or later
 - Novaris Framework
 - Node.js and npm for theme development
 
