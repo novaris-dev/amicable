@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/novaris-dev/framework/develop/schemas/theme.schema.json",
     "name": "Amicable",
     "slug": "amicable",
     "version": "0.2.0",
