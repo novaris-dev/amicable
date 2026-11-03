@@ -7,10 +7,10 @@ pre {
     box-sizing    : content-box;
     padding: 1.125rem;
     line-height: 1.75;
-    text-shadow: 0 1px #e9f3f8;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 1px 1px 10px #e9f3f8;
+    text-shadow: 0 1px var( --color-code );
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 1px 1px 10px var( --color-code );
     border-radius: 5px;
-    border-left: 6px solid #e9f3f8;
+    border-left: 6px solid var( --color-code );
 }
 
 pre {

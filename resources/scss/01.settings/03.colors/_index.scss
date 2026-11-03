@@ -1,8 +1,10 @@
 ////
 /// Colors
 ///
-/// `$colors` is Amicable's design palette: the colors the theme's styles use.
-/// Each entry becomes:
+/// `$colors` is Amicable's design palette. The theme's styles use these
+/// colors through their custom properties (`color: var( --color-muted )`),
+/// so changing a value here changes it everywhere it's used. Each entry
+/// becomes:
 ///
 ///   - a CSS custom property: `muted` → `--color-muted`
 ///   - text, background, and border classes: `.text-muted`, `.bg-surface`,
@@ -17,21 +19,22 @@
 @use 'sass:map';
 
 $colors: (
-	text:       #677d89, // body text
-	link:       #0369a1, // links
-	heading:    #000000, // headings, titles
-	muted:      #959595, // dates, meta, footer text
-	muted-dark: #757575, // header links
-	surface:    #fcfcfc, // header and footer background
-	divider:    #f3f3f3, // header and footer lines
-	border:     #cccccc, // comment form and list borders
-	code:       #e9f3f8, // code block accent
-	dark:       #333333, // pagination
-	light:      #f7f7f7, // pagination background
-	gray:       #eeeeee, // comment backgrounds
-	error:      #ff0000, // required fields
-	black:      #000000,
-	white:      #ffffff
+	text:         #677d89, // body text
+	link:         #0369a1, // links
+	heading:      #000000, // headings, titles
+	muted:        #959595, // dates, meta, footer text
+	muted-dark:   #757575, // header links
+	surface:      #fcfcfc, // header and footer background
+	divider:      #f3f3f3, // header and footer lines
+	border:       #cccccc, // comment form and list borders
+	border-light: #dddddd, // pagination borders
+	code:         #e9f3f8, // code block accent
+	dark:         #333333, // pagination
+	light:        #f7f7f7, // pagination background
+	gray:         #eeeeee, // comment backgrounds
+	error:        #ff0000, // required fields
+	black:        #000000, // menu background
+	white:        #ffffff  // menu text, post and comment backgrounds
 ) !default;
 
 // -----------------------------------------------------------------------------

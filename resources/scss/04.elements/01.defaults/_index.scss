@@ -1,13 +1,13 @@
 @use '../../01.settings/06.fonts' as fonts;
 
 body {
-	color: #677d89;
+	color: var( --color-text );
 	font-family: fonts.font-family( 'primary' );
 	margin: 0;
 }
 
 a {
-	color: #0369a1;
+	color: var( --color-link );
 	text-decoration: underline;
 	text-decoration-thickness: 2px; /* Adjust the value as needed */
 }
