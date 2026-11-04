@@ -4,6 +4,8 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.2] - 11.04.2026
+
 ### Changed
 
 - Updated the Novaris Framework from 1.0.3 to 1.0.6 in `composer.lock`. 1.0.4 makes `featured_image()` honor `'featured-image' => false`; Amicable sets it to an array of image sizes, so featured images stay on. 1.0.5 and 1.0.6 make `novaris export --watch` re-export when a parent theme's files or the site's `config/` files change.
