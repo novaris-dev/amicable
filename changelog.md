@@ -6,6 +6,7 @@ All notable changes to Amicable will be documented in this file.
 
 ### Added
 
+- A copy button on code blocks in posts and pages. It appears in the top-right corner when you hover over a block (always on touch screens), copies the code, and shows a check mark for two seconds. It stays in the corner when a long line is scrolled sideways, and announces the copy to screen readers.
 - Gallery styles for `.gallery` and `.gallery-columns-2`, `-3` and `-4`: a grid of square-cropped images with centered captions. Galleries show two columns on phones and their own number of columns from 641px up. See `07.components/03.contents/07.gallery`.
 
 ### Changed

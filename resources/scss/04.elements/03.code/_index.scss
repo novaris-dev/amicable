@@ -45,6 +45,68 @@ pre {
 	}
 }
 
+// Added by resources/js/app.js: a container around each code block in
+// content, with a copy button in its top-right corner. On devices with a
+// mouse, the button shows when the block is hovered or the button has focus;
+// on touch screens it's always shown.
+.code-block {
+	position: relative;
+	margin: 1.5rem 0;
+
+	pre {
+		margin: 0;
+	}
+
+	&__copy {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2rem;
+		height: 2rem;
+		padding: 0;
+		color: var( --color-muted-dark );
+		background: var( --color-code-background );
+		border: 1px solid var( --color-code-border );
+		border-radius: 0.375rem;
+		transition: opacity 0.15s ease, color 0.15s ease;
+
+		svg {
+			display: block;
+			width: 1rem;
+			height: 1rem;
+		}
+
+		&:hover,
+		&:focus-visible {
+			color: var( --color-code-text );
+		}
+
+		&:focus-visible {
+			outline: 2px solid var( --color-link );
+			outline-offset: 2px;
+		}
+
+		&.is-copied {
+			color: #1a7f37;
+		}
+	}
+
+	@media ( hover: hover ) {
+		&__copy {
+			opacity: 0;
+		}
+
+		&:hover .code-block__copy,
+		.code-block__copy:focus-visible,
+		.code-block__copy.is-copied {
+			opacity: 1;
+		}
+	}
+}
+
 code {
 	padding: 0.125em 0.25em;
 	font-family: fonts.font-family( 'code' );
