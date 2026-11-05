@@ -4,6 +4,8 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.3] - 11.04.2026
+
 ### Added
 
 - A copy button on code blocks in posts and pages. It appears in the top-right corner when you hover over a block (always on touch screens), copies the code, and shows a check mark for two seconds. It stays in the corner when a long line is scrolled sideways, and announces the copy to screen readers.
@@ -11,6 +13,7 @@ All notable changes to Amicable will be documented in this file.
 
 ### Changed
 
+- Updated the Novaris Framework from 1.0.6 to 1.0.9 in `composer.lock`. 1.0.7 to 1.0.9 add `NOVARIS_USER_PATH`, an optional `.env` setting for testing the theme with content from another folder such as theme-test-data, a `novaris serve` command, and serving that folder's images on live sites.
 - Code blocks (`<pre>`) are now a flat light panel with a thin border and rounded corners, set in the code font, replacing the inset shadow, text shadow and thick left border. Long lines scroll inside the block, and the block can no longer be wider than the page on phones.
 - The `code` color is replaced by `code-background`, `code-border` and `code-text`. If you set `--color-code`, use those instead.
 
