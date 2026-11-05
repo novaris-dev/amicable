@@ -1,9 +1,9 @@
 ////
 /// Grid
 ///
-/// `.grid-col-{1–10}` (display grid, equal columns, 1.125rem gap) and
-/// `.gallery-columns-3` are Amicable's own grid classes. The generated
-/// `.grid-cols-*` / `.col-span-*` classes follow below.
+/// `.grid-col-{1–10}` (display grid, equal columns, 1.125rem gap) are
+/// Amicable's own grid classes. The generated `.grid-cols-*` / `.col-span-*`
+/// classes follow below. Galleries are in 07.components/03.contents/07.gallery.
 ///
 /// @group Utilities
 ////
@@ -32,14 +32,6 @@ $grid-columns: (
 		grid-gap: 1.125rem;
 		padding: 0;
 	}
-}
-
-
-.gallery-columns-3 {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 1.125rem;
-	max-width: 896px;
 }
 
 

@@ -28,7 +28,9 @@ $colors: (
 	divider:      #f3f3f3, // header and footer lines
 	border:       #cccccc, // comment form and list borders
 	border-light: #dddddd, // pagination borders
-	code:         #e9f3f8, // code block accent
+	code-background: #f6f8fa, // code block background
+	code-border:     #e5e7eb, // code block border
+	code-text:       #24292f, // code block text
 	dark:         #333333, // pagination
 	light:        #f7f7f7, // pagination background
 	gray:         #eeeeee, // comment backgrounds

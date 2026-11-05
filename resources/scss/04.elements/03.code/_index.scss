@@ -1,35 +1,56 @@
+////
+/// Code
+///
+/// Code blocks (`<pre>`) and inline `<code>`. Code blocks are a flat panel
+/// with a thin border, set in the code font. Long lines scroll sideways
+/// inside the block instead of widening the page, so they work on phones.
+///
+/// Colors: `--color-code-background`, `--color-code-border` and
+/// `--color-code-text` (01.settings/03.colors).
+///
+/// @group Elements
+////
+
 @use '../../01.settings/06.fonts' as fonts;
+@use '../../02.tools' as tools;
 
 pre {
-    overflow      : auto;
-    word-wrap     : normal;
-    tab-size      : 4;
-    box-sizing    : content-box;
-    padding: 1.125rem;
-    line-height: 1.75;
-    text-shadow: 0 1px var( --color-code );
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 1px 1px 10px var( --color-code );
-    border-radius: 5px;
-    border-left: 6px solid var( --color-code );
-}
+	box-sizing: border-box;
+	max-width: 100%;
+	margin: 1.5rem 0;
+	padding: 0.875rem 1rem;
+	overflow-x: auto;
+	font-family: fonts.font-family( 'code' );
+	font-size: 0.8125rem;
+	line-height: 1.7;
+	color: var( --color-code-text );
+	white-space: pre;
+	word-wrap: normal;
+	tab-size: 4;
+	background: var( --color-code-background );
+	border: 1px solid var( --color-code-border );
+	border-radius: 0.5rem;
 
-pre {
-	overflow      : auto;
-	word-wrap     : normal;
+	@include tools.up( sm ) {
+		padding: 1.125rem 1.5rem;
+		font-size: 0.875rem;
+	}
 
 	code {
-		padding    : 0;
-		font-size  : 15px;
-		background : transparent;
+		padding: 0;
+		font-size: inherit;
+		color: inherit;
+		background: transparent;
+		border-radius: 0;
 	}
 }
 
 code {
-	padding    : 0.125em 0.25em;
+	padding: 0.125em 0.25em;
 	font-family: fonts.font-family( 'code' );
-    	font-size  : 0.789em; // ~15px
-	font-style:  normal;
-	color:       inherit;
-	background : rgba( 214, 224, 231, 0.25 );
+	font-size: 0.789em; // ~15px
+	font-style: normal;
+	color: inherit;
+	background: rgba( 214, 224, 231, 0.25 );
 	border-radius: 3px;
 }

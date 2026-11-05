@@ -4,6 +4,19 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Gallery styles for `.gallery` and `.gallery-columns-2`, `-3` and `-4`: a grid of square-cropped images with centered captions. Galleries show two columns on phones and their own number of columns from 641px up. See `07.components/03.contents/07.gallery`.
+
+### Changed
+
+- Code blocks (`<pre>`) are now a flat light panel with a thin border and rounded corners, set in the code font, replacing the inset shadow, text shadow and thick left border. Long lines scroll inside the block, and the block can no longer be wider than the page on phones.
+- The `code` color is replaced by `code-background`, `code-border` and `code-text`. If you set `--color-code`, use those instead.
+
+### Removed
+
+- The old `.gallery-columns-3` rule in `08.utilities/07.grid`. The class still works, through the new gallery styles.
+
 ## [0.2.2] - 11.04.2026
 
 ### Changed

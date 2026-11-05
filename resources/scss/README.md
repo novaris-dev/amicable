@@ -21,12 +21,12 @@ Every helper class comes from a scale in `01.settings`, filled with the values A
 
 | Setting | Values | Classes |
 |---|---|---|
-| `$colors` (03.colors) | text, link, heading, muted, muted-dark, surface, divider, border, border-light, code, dark, light, gray, error, black, white | `.text-{color}`, `.bg-{color}`, `.border-{color}` |
+| `$colors` (03.colors) | text, link, heading, muted, muted-dark, surface, divider, border, border-light, code-background, code-border, code-text, dark, light, gray, error, black, white | `.text-{color}`, `.bg-{color}`, `.border-{color}` |
 | `$spacing-steps`, `$spacing-names` (08.spacings) | 0.25rem steps 0, 1, 2, 3, 4, 6, 8, 9, 12; `gutter` = 1.125rem; `px` | `.m-*`, `.p-*`, `.mt-*`… `.gap-*`, `.gap-gutter` |
 | `$font-families` (06.fonts) | heading (Fira Sans), primary (Merriweather), date (Tangerine), code (JetBrains Mono) | `.font-heading`, `.font-date`… |
 | `$font-sizes`, `$font-weights`, `$line-heights` | xs–5xl; normal, semibold, bold; none–relaxed | `.text-sm`, `.font-bold`, `.leading-tight` |
 | `$border-widths`, `$radii` (01.borders) | 0, 1 (0.063rem hairline), 4, 6; none, sm, base, md, lg, full | `.border-1`, `.rounded-lg` |
-| `$shadows`, `$opacities` (05.effects) | none, sm (code), md (menus); 0, 50, 70, 100 | `.shadow-md`, `.opacity-70` |
+| `$shadows`, `$opacities` (05.effects) | none, sm, md (menus); 0, 50, 70, 100 | `.shadow-md`, `.opacity-70` |
 | `$sizes` (07.sizings) | full, half, third… | `.w-full`, `.h-auto` |
 | `$content-widths` (04.dimensions) | narrow 640px, medium 896px, wide 1170px | `.max-w-narrow`, `.container` |
 | `$breakpoints` (02.breaks) | sm 641px, md 769px, lg 1170px | the `md:` prefix |
@@ -52,7 +52,7 @@ To add more breakpoints, list them in `$utility-breakpoints` (`01.settings/09.ut
 | 04.borders | `.border`, `.border-{0,1,4,6}`, `.border-{color}`, `.rounded-*` |
 | 05.effects | `.shadow-{none,sm,md}`, `.opacity-{0,50,70,100}` |
 | 06.flexbox | `.flex-{row,col,wrap,…}`, `.items-*`, `.justify-*`, `.flex-1`, `.grow`, `.shrink-0` |
-| 07.grid | Amicable's `.grid-col-{1–10}` and `.gallery-columns-3`, plus generated `.grid-cols-{1–12}`, `.col-span-{1–12,full}` |
+| 07.grid | Amicable's `.grid-col-{1–10}`, plus generated `.grid-cols-{1–12}`, `.col-span-{1–12,full}` |
 | 08.helpers | `.clearfix`, `.truncate`, `.cursor-pointer`, `.select-none` |
 | 09.layout | `.block`, `.flex`, `.grid`, `.hidden`…, `.relative`…, `.overflow-*`, `.container` |
 | 10.list | `.list-none`, `.list-disc`, `.list-decimal`, `.list-inside` |
@@ -87,7 +87,7 @@ The theme's own styles read their colors from `$colors` through custom propertie
 | `border` / `gray` | comment borders and backgrounds |
 | `dark` / `light` / `border-light` | pagination |
 | `black` / `white` | the menu |
-| `code` | code block accent |
+| `code-background` / `code-border` / `code-text` | code blocks (`<pre>`) |
 
 Edit the value in `01.settings/03.colors` and rebuild, or override it at run time without a rebuild:
 
