@@ -1,4 +1,4 @@
-<article class="<?= e( post_class() ) ?>">
+<article class="<?= e( post_class( [], $entry ) ) ?>">
 	<header class="entry__header">
 		<?php if ( $entry->date() ) : ?>
 			<div class="entry__metadata">
