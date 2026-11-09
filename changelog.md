@@ -7,6 +7,7 @@ All notable changes to Amicable will be documented in this file.
 ### Changed
 
 - Releases are automatic: merging a pull request from a `release/x.y.z` branch tags the merged code `x.y.z`, publishes the release with notes from this changelog, and attaches the ZIP. Publishing a release by hand still builds the ZIP as before.
+- Updated the Novaris Framework from 1.1.5 to 1.1.6 in `composer.lock`. Links from images to their full size now work when the content is in another folder (`NOVARIS_USER_PATH`), uncropped image sizes no longer share files with cropped ones, and video posts' excerpts no longer start with "Play video on YouTube".
 - Every pull request is checked automatically (`.github/workflows/theme-check.yml`): Amicable is built with the theme test data, the whole test site is exported, and the check fails on PHP warnings, missing pages, broken links, invalid feeds or sitemaps, and HTML problems.
 
 ## [0.2.8] - 11.09.2026
