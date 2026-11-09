@@ -7,6 +7,18 @@
 <link rel="stylesheet" href="<?= e( asset( 'resources/scss/screen.scss' ) ) ?>" />
 <?= $doctitle->render(); ?>
 <?= Novaris\Font\fonts(); ?>
+<?php
+// Tell browsers and feed readers where each feed is.
+foreach ( app( 'content.types' )->all() as $feed_type ) :
+	if ( ! $feed_type->isPublic() || ! $feed_type->hasRouting() || ! $feed_type->hasFeed() ) {
+		continue;
+	}
+
+	$feed_title = config( 'app.title' ) . ( $feed_type->isHomeAlias() ? '' : ' » ' . ucfirst( $feed_type->name() ) . 's' );
+	?>
+<link rel="alternate" type="application/rss+xml" title="<?= e( $feed_title ) ?>" href="<?= e( $feed_type->rssFeedUrl() ) ?>" />
+<link rel="alternate" type="application/atom+xml" title="<?= e( $feed_title . ' (Atom)' ) ?>" href="<?= e( $feed_type->atomFeedUrl() ) ?>" />
+<?php endforeach ?>
 </head>
 <body class="<?= e( body_class() ) ?>">	
 <div id="container" class="app">

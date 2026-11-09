@@ -4,6 +4,15 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Feed links in the page `<head>` (RSS and Atom for each content type with a feed), so browsers and feed readers can find the blog's feed. Static exports link to the `.xml` files.
+- Sitemaps are turned on (`'sitemap' => true` in `config/app.php`), at `/sitemap`, with a sitemap each for posts, categories and pages.
+
+### Fixed
+
+- `npm run dev` exported with a fixed address (`--url=https://novarisframework.codestacks.cc`), so exported pages linked to that domain wherever you ran it. It now uses `APP_URL` from `.env`.
+
 ## [0.2.8] - 11.09.2026
 
 ### Added

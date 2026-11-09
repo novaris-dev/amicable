@@ -55,6 +55,10 @@ return [
 
 	'private' => true,
 
+	// Sitemaps at /sitemap, listing posts, categories and pages for search
+	// engines.
+	'sitemap' => true,
+
 	'supports' => [
 
 		// Search: `/search.json` and the `/search` page. See content/search.php.
