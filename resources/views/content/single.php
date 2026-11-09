@@ -1,6 +1,6 @@
 <section id="content" class="site-content">
 	<main id="main" class="content-area">
-		<article class="<?= e( post_class() ) ?>">
+		<article class="<?= e( post_class( [], $single ) ) ?>">
 			<header class="entry__header">
 				<div class="entry__metadata">
 					<?= $single->date(); ?>

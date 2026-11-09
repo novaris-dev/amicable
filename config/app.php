@@ -64,6 +64,10 @@ return [
 		// Markdown becomes a player. See resources/js/embeds.js.
 		'embeds' => true,
 
+		// Post formats: a post with `format: quote` and so on gets its own
+		// layout in lists. See resources/views/content/collection.php.
+		'post-formats' => [ 'aside', 'status', 'quote', 'link', 'image', 'gallery', 'video', 'audio', 'chat' ],
+
 		'featured-image' => [
 			'sizes' => [
 				'post-thumbnail' => [

@@ -4,6 +4,18 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Post formats (Novaris Framework 1.1.5 or newer), with all nine formats turned on in `config/app.php`. A post with `format:` in its front matter gets its own layout in lists and archives:
+  - Aside, status, quote and link (`entry/collection-short.php`): the whole post in a light card, without a visible title, followed by the format and the date, which links to the post. Status posts are larger, quotes are large and italic with their source below, and the link stands out.
+  - Image, gallery, video, audio and chat (`entry/collection-full.php`): the whole post under its title instead of an excerpt, so the media or conversation shows in the list.
+  - A format can get its own list template, such as `entry/collection-quote.php`.
+  - Posts get a `format-*` class (`format-standard` without a format) on lists and single posts.
+
+### Changed
+
+- Updated the Novaris Framework from 1.1.4 to 1.1.5 in `composer.lock`, which adds post formats.
+
 ## [0.2.7] - 11.09.2026
 
 ### Changed

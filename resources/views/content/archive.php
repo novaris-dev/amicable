@@ -6,7 +6,15 @@
 		<section class="archive-content">
 			<?= $archive->content(); ?>
 		</section>
-		<?= $engine->each( 'entry.archive', $entries, 'entry' ) ?>
+		<?php
+		// Like content/collection.php: posts with a post format use the
+		// short or full list template, and the rest use entry/archive.php.
+		$engine->each( 'entry', $entries, 'entry', fn( $entry ) => match ( $entry->format() ) {
+			'aside', 'status', 'quote', 'link'            => [ 'archive-' . $entry->format(), 'collection-short', 'archive' ],
+			'image', 'gallery', 'video', 'audio', 'chat' => [ 'archive-' . $entry->format(), 'collection-full', 'archive' ],
+			default                                       => [ 'archive' ],
+		} );
+		?>
 		<?= $engine->includeWhen( $pagination, 'menu.pagination' ); ?>
 	</main>
 </section>
