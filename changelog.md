@@ -4,6 +4,18 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Search, using the search index from Novaris Framework 1.1.2. It's turned on in `config/app.php` with `supports.search`.
+  - A search icon in the header links to the search page.
+  - The search page (`content/search.php`) shows results as you type. Every word must match; matches in titles rank first, then categories, then the text. Matching words are highlighted, and each result shows its date and the part of the text around the match. Accents are ignored, and languages without spaces, such as Japanese, work too.
+  - The query stays in the address (`/search?q=…`), so results can be shared and bookmarked. It works the same on static exports, since the searching happens in the browser (`resources/js/search.js`), without a library.
+  - Without JavaScript, the form still submits and keeps the query, and the page says search needs JavaScript.
+
+### Changed
+
+- Updated the Novaris Framework from 1.0.9 to 1.1.2 in `composer.lock`.
+
 ## [0.2.3] - 11.04.2026
 
 ### Added
