@@ -4,6 +4,8 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.8] - 11.09.2026
+
 ### Added
 
 - Post formats (Novaris Framework 1.1.5 or newer), with all nine formats turned on in `config/app.php`. A post with `format:` in its front matter gets its own layout in lists and archives:
