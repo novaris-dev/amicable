@@ -4,6 +4,8 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.4] - 11.09.2026
+
 ### Added
 
 - Search, using the search index from Novaris Framework 1.1.2. It's turned on in `config/app.php` with `supports.search`.
