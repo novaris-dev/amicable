@@ -4,6 +4,8 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.9] - 11.09.2026
+
 ### Added
 
 - Feed links in the page `<head>` (RSS and Atom for each content type with a feed), so browsers and feed readers can find the blog's feed. Static exports link to the `.xml` files.
