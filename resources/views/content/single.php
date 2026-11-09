@@ -7,7 +7,7 @@
 				</div>
 
 				<h1 class="entry__title">
-					<?= e( $single->title() ); ?>
+					<?= e( $single->title() ?: 'Untitled' ); ?>
 				</h1>
 			</header>
 			<?php if ( $thumbnail = $single->thumbnail( 'amicable-landscape-extra-large' ) ) : ?>

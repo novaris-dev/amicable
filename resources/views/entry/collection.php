@@ -8,7 +8,7 @@
 
 		<h2 class="entry__title">
 			<a class="entry__title-anchor" href="<?= e( $entry->url() ); ?>">
-				<?= e( $entry->title() ); ?>
+				<?= e( $entry->title() ?: 'Untitled' ); ?>
 			</a>
 		</h2>
 	</header>

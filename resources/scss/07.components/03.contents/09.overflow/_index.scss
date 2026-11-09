@@ -1,0 +1,38 @@
+////
+/// Long content on small screens
+///
+/// Keeps posts and pages inside the screen on phones:
+///
+/// - Long words and URLs, in titles and content, wrap instead of making the
+///   page scroll sideways.
+/// - Tables wider than the content scroll sideways inside themselves.
+///
+/// Code blocks already scroll inside themselves (04.elements/03.code).
+///
+/// @group Components
+////
+
+.entry__title,
+.entry-title,
+.entry__content,
+.entry-content {
+	overflow-wrap: anywhere;
+}
+
+.entry__content,
+.entry-content {
+
+	table {
+		display: block;
+		max-width: 100%;
+		overflow-x: auto;
+		border-collapse: collapse;
+	}
+
+	// Table cells keep normal word wrapping, so short columns don't break
+	// in the middle of words.
+	th,
+	td {
+		overflow-wrap: normal;
+	}
+}
