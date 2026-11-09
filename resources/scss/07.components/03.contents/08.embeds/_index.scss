@@ -1,0 +1,131 @@
+////
+/// Embeds
+///
+/// Videos and audio that the Novaris Framework makes from a link on its own
+/// line in Markdown (`supports.embeds`):
+///
+/// - `figure.embed--youtube` / `.embed--vimeo`: a 16:9 frame. With click to
+///   load, the frame holds a play button (`.embed__play`), with the video's
+///   thumbnail for YouTube, which resources/js/embeds.js swaps for the
+///   player.
+/// - `figure.embed--video` / `.embed--audio`: the browser's own player.
+///
+/// @group Components
+////
+
+.embed {
+	margin: 1.5rem 0;
+
+	// The 16:9 box for YouTube and Vimeo.
+	&__frame {
+		position: relative;
+		overflow: hidden;
+		aspect-ratio: #{ '16 / 9' };
+		background: var( --color-black );
+		border-radius: 0.5rem;
+	}
+
+	&__iframe {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+
+	// Click to load: the play button covers the frame.
+	&__play {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var( --color-white );
+		text-decoration: none;
+		cursor: pointer;
+
+		&:focus-visible {
+			outline: 3px solid var( --color-link );
+			outline-offset: -3px;
+		}
+	}
+
+	&__thumbnail {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0.85;
+		transition: opacity 0.2s ease;
+	}
+
+	&__play-button {
+		position: relative;
+		width: 4.25rem;
+		height: 3rem;
+		background: rgba( 0, 0, 0, 0.7 );
+		border-radius: 0.75rem;
+		transition: background 0.2s ease, transform 0.2s ease;
+
+		// The triangle.
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			border-style: solid;
+			border-width: 0.65rem 0 0.65rem 1.1rem;
+			border-color: transparent transparent transparent var( --color-white );
+			transform: translate( -40%, -50% );
+		}
+	}
+
+	.embed__play:hover .embed__play-button,
+	.embed__play:focus-visible .embed__play-button {
+		background: #ff0033;
+		transform: scale( 1.05 );
+	}
+
+	.embed__play:hover .embed__thumbnail {
+		opacity: 1;
+	}
+
+	// Vimeo has no thumbnail, so give its frame some colour and the
+	// button an outline, to make it clear it's a video.
+	&--vimeo .embed__frame {
+		background: linear-gradient( 135deg, #1b2b34, #0d1418 );
+	}
+
+	&--vimeo .embed__play-button {
+		box-shadow: 0 0 0 2px rgba( 255, 255, 255, 0.35 );
+	}
+
+	&--vimeo .embed__play:hover .embed__play-button,
+	&--vimeo .embed__play:focus-visible .embed__play-button {
+		background: #17d5ff;
+	}
+
+	// "Play video on YouTube": hidden visually, read by screen readers.
+	&__label {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset( 50% );
+		white-space: nowrap;
+	}
+
+	// Video and audio files.
+	&__player {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	&--video .embed__player {
+		height: auto;
+		background: var( --color-black );
+		border-radius: 0.5rem;
+	}
+}

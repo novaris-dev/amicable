@@ -60,6 +60,10 @@ return [
 		// Search: `/search.json` and the `/search` page. See content/search.php.
 		'search' => true,
 
+		// Embeds: a YouTube, Vimeo, video or audio link on its own line in
+		// Markdown becomes a player. See resources/js/embeds.js.
+		'embeds' => true,
+
 		'featured-image' => [
 			'sizes' => [
 				'post-thumbnail' => [

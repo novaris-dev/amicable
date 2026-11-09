@@ -1,4 +1,5 @@
 import './search.js';
+import './embeds.js';
 
 document.addEventListener( 'DOMContentLoaded', function() {
 	var menuButton    = document.querySelector( '.menu-toggle' );

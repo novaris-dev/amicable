@@ -4,6 +4,12 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Embeds, using Novaris Framework's `supports.embeds` (framework 1.1.3 or newer). A YouTube, Vimeo, video or audio link on its own line in a post becomes a player.
+  - YouTube and Vimeo show in a 16:9 frame with a play button, and YouTube also shows the video's thumbnail. The real player only loads when the button is clicked (`resources/js/embeds.js`), so YouTube's and Vimeo's scripts don't load for visitors who don't play the video. With a modifier key, or without JavaScript, the button opens the video on its own site.
+  - Video and audio files use the browser's player, full width.
+
 ## [0.2.5] - 11.09.2026
 
 ### Changed
