@@ -22,7 +22,7 @@
 		"build": "npm run prod && npm run export",
 		"dev": "vite build --minify=false && concurrently \"npm:watch:vite\" \"npm:watch:novaris\"",
 		"watch:vite": "vite build --watch --minify=false",
-		"watch:novaris": "composer novaris export -- --watch --url=https://novarisframework.codestacks.cc",
+		"watch:novaris": "composer novaris export -- --watch",
 		"prod": "vite build",
 		"export": "node export-theme.js"
 	}
