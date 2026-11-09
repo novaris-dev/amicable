@@ -56,6 +56,10 @@ return [
 	'private' => true,
 
 	'supports' => [
+
+		// Search: `/search.json` and the `/search` page. See content/search.php.
+		'search' => true,
+
 		'featured-image' => [
 			'sizes' => [
 				'post-thumbnail' => [

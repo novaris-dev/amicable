@@ -1,3 +1,5 @@
+import './search.js';
+
 document.addEventListener( 'DOMContentLoaded', function() {
 	var menuButton    = document.querySelector( '.menu-toggle' );
 	var menuContainer = document.querySelector( '.primary-menu' );
