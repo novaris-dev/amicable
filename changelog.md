@@ -4,6 +4,8 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.5] - 11.09.2026
+
 ### Changed
 
 - On desktop, a thin divider now separates the header's search icon from the menu, so it reads as its own control rather than another menu item. Phones are unchanged.
