@@ -4,6 +4,8 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.7] - 11.09.2026
+
 ### Changed
 
 - Updated the Novaris Framework from 1.1.3 to 1.1.4 in `composer.lock`. Feeds now have content, empty categories have a page instead of a 404 (so the category list has no broken links), and small images are no longer enlarged.
