@@ -9,6 +9,12 @@ All notable changes to Amicable will be documented in this file.
 - Feed links in the page `<head>` (RSS and Atom for each content type with a feed), so browsers and feed readers can find the blog's feed. Static exports link to the `.xml` files.
 - Sitemaps are turned on (`'sitemap' => true` in `config/app.php`), at `/sitemap`, with a sitemap each for posts, categories and pages.
 
+### Changed
+
+- Releases are automatic: merging a pull request from a `release/x.y.z` branch tags the merged code `x.y.z`, publishes the release with notes from this changelog, and attaches the ZIP. Publishing a release by hand still builds the ZIP as before.
+- Updated the Novaris Framework from 1.1.5 to 1.1.6 in `composer.lock`. Links from images to their full size now work when the content is in another folder (`NOVARIS_USER_PATH`), uncropped image sizes no longer share files with cropped ones, and video posts' excerpts no longer start with "Play video on YouTube".
+- Every pull request is checked automatically (`.github/workflows/theme-check.yml`): Amicable is built with the theme test data, the whole test site is exported, and the check fails on PHP warnings, missing pages, broken links, invalid feeds or sitemaps, and HTML problems.
+
 ### Fixed
 
 - `npm run dev` exported with a fixed address (`--url=https://novarisframework.codestacks.cc`), so exported pages linked to that domain wherever you ran it. It now uses `APP_URL` from `.env`.

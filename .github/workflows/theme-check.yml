@@ -1,0 +1,67 @@
+name: theme check
+
+# Builds Amicable with the theme test data, exports the whole test site,
+# and fails on PHP warnings, missing pages, broken links, invalid feeds or
+# sitemaps, and HTML problems. The checks live in the framework repository
+# (.github/scripts/check-export.py), so every theme shares them.
+
+on:
+    push:
+        branches: [develop]
+    pull_request:
+
+permissions:
+    contents: read
+
+jobs:
+    check:
+        name: Amicable with theme-test-data
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v7
+
+            - name: Check out the theme test data
+              uses: actions/checkout@v7
+              with:
+                  repository: novaris-dev/theme-test-data
+                  ref: develop
+                  path: theme-test-data
+
+            - name: Check out the framework's checks
+              uses: actions/checkout@v7
+              with:
+                  repository: novaris-dev/framework
+                  ref: develop
+                  path: .framework
+                  sparse-checkout: .github/scripts
+
+            - uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '8.3'
+                  extensions: gd, zip
+                  coverage: none
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v7
+              with:
+                  node-version: 24
+                  cache: npm
+
+            - name: Install PHP dependencies
+              run: composer install --no-interaction --no-progress
+
+            - name: Build CSS and JavaScript
+              run: |
+                  npm ci
+                  npm run prod
+
+            - name: Export the test site
+              run: |
+                  printf 'APP_URL="http://localhost"\nNOVARIS_USER_PATH="theme-test-data"\n' > .env
+                  set -o pipefail
+                  php -d error_reporting=-1 -d display_errors=1 vendor/novaris-dev/framework/src/bin/novaris export --count 2>&1 | tee export.log
+
+            - name: Check the export
+              run: python3 .framework/.github/scripts/check-export.py public http://localhost export.log
