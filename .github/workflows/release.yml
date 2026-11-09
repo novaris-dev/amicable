@@ -1,6 +1,18 @@
 name: release
 
+# Publishes a release and attaches the theme ZIP that the Novaris installer
+# downloads.
+#
+# - Merging a pull request from a `release/x.y.z` branch into develop does
+#   it all: it tags the merge commit `x.y.z` (no "v"), publishes the release
+#   with the notes from that version's section of changelog.md, then builds
+#   and attaches the ZIP. The tag is always on the merged code.
+# - Publishing a release by hand still works: the ZIP is built and attached.
+
 on:
+    pull_request:
+        types: [closed]
+        branches: [develop]
     release:
         types: [published]
 
@@ -9,11 +21,14 @@ permissions:
 
 jobs:
     release:
+        if: github.event_name == 'release' || (github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/'))
         runs-on: ubuntu-latest
 
         steps:
             - name: Checkout
               uses: actions/checkout@v7
+              with:
+                  ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.merge_commit_sha || github.ref }}
 
             - name: Setup Node.js
               uses: actions/setup-node@v7
@@ -26,19 +41,59 @@ jobs:
             # theme.json. Fail early if the tag and theme.json disagree.
             - name: Resolve version
               id: version
+              env:
+                  EVENT: ${{ github.event_name }}
+                  RELEASE_TAG: ${{ github.event.release.tag_name }}
+                  BRANCH: ${{ github.event.pull_request.head.ref }}
               run: |
-                  TAG="${{ github.event.release.tag_name }}"
+                  if [ "$EVENT" = "pull_request" ]; then
+                      TAG="${BRANCH#release/}"
+                  else
+                      TAG="$RELEASE_TAG"
+                  fi
+
                   VERSION="${TAG#v}"
                   SLUG=$(node -p "require('./theme.json').slug")
                   THEME_VERSION=$(node -p "require('./theme.json').version")
 
                   if [ "$VERSION" != "$THEME_VERSION" ]; then
-                      echo "::error::Release tag ($TAG) does not match theme.json version ($THEME_VERSION)."
+                      echo "::error::Release $TAG does not match theme.json version ($THEME_VERSION)."
                       exit 1
                   fi
 
+                  echo "tag=$TAG" >> "$GITHUB_OUTPUT"
                   echo "version=$VERSION" >> "$GITHUB_OUTPUT"
                   echo "zip=$SLUG.$VERSION.zip" >> "$GITHUB_OUTPUT"
+
+            # Only for a merged release pull request: tag the merge commit and
+            # publish the release, with notes from changelog.md.
+            - name: Tag and publish the release
+              if: github.event_name == 'pull_request'
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  TAG: ${{ steps.version.outputs.tag }}
+                  VERSION: ${{ steps.version.outputs.version }}
+                  SHA: ${{ github.event.pull_request.merge_commit_sha }}
+              run: |
+                  if gh release view "$TAG" > /dev/null 2>&1; then
+                      echo "::error::A $TAG release already exists."
+                      exit 1
+                  fi
+
+                  python3 - "$VERSION" > release-notes.md <<'PY'
+                  import re, sys
+                  version = sys.argv[1]
+                  text = open('changelog.md', encoding='utf-8').read()
+                  match = re.search(r'^## \[' + re.escape(version) + r'\][^\n]*\n(.*?)(?=^## \[|^\[[^\]]+\]: |\Z)', text, re.S | re.M)
+                  if not match or not match.group(1).strip():
+                      sys.exit(f'::error::changelog.md has no "## [{version}]" section.')
+                  print(match.group(1).strip())
+                  PY
+
+                  gh release create "$TAG" \
+                    --target "$SHA" \
+                    --title "$TAG" \
+                    --notes-file release-notes.md
 
             - name: Install Node dependencies
               run: npm ci
@@ -53,6 +108,6 @@ jobs:
               env:
                   GH_TOKEN: ${{ github.token }}
               run: |
-                  gh release upload "${{ github.event.release.tag_name }}" \
+                  gh release upload "${{ steps.version.outputs.tag }}" \
                     "${{ steps.version.outputs.zip }}" \
                     --clobber
