@@ -4,6 +4,16 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- Updated the Novaris Framework from 1.1.3 to 1.1.4 in `composer.lock`. Feeds now have content, empty categories have a page instead of a 404 (so the category list has no broken links), and small images are no longer enlarged.
+
+### Fixed
+
+- A post or page with no title showed an empty heading, and its link in the blog list had no text, so it couldn't be clicked. It now shows "Untitled".
+- Long words and URLs made posts and pages scroll sideways on phones. They now wrap.
+- Wide tables made posts and pages scroll sideways on phones. They now scroll inside themselves (`07.components/03.contents/09.overflow`).
+
 ## [0.2.6] - 11.09.2026
 
 ### Added

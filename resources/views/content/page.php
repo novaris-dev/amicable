@@ -2,7 +2,7 @@
 	<main id="main" class="content-area">
         <article class="<?= e( post_class() ) ?>">
             <header class="entry-header">
-                <h1 class="entry-title"><?= e( $page->title() ); ?></h1>
+                <h1 class="entry-title"><?= e( $page->title() ?: 'Untitled' ); ?></h1>
             </header>
             <div class="entry-content">
                 <?= $page->content() ?>
