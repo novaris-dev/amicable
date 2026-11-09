@@ -12,6 +12,10 @@ All notable changes to Amicable will be documented in this file.
   - A format can get its own list template, such as `entry/collection-quote.php`.
   - Posts get a `format-*` class (`format-standard` without a format) on lists and single posts.
 
+### Changed
+
+- Updated the Novaris Framework from 1.1.4 to 1.1.5 in `composer.lock`, which adds post formats.
+
 ## [0.2.7] - 11.09.2026
 
 ### Changed
