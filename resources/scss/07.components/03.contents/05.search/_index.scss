@@ -44,6 +44,33 @@
 	}
 }
 
+// On desktop, where the menu sits in the header, a thin divider sets the
+// search link apart from the menu items, so it reads as its own control
+// rather than another menu item. On phones the menu is the separate "Menu"
+// button, so no divider is needed.
+@include tools.up( md ) {
+
+	.app__header-actions {
+		gap: 0;
+	}
+
+	.search-link {
+		position: relative;
+		margin-left: 1.25rem;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: -0.75rem;
+			width: 1px;
+			height: 1.5rem;
+			background: var( --color-border-light );
+			transform: translateY( -50% );
+		}
+	}
+}
+
 // The search page.
 .search {
 	max-width: 640px;
