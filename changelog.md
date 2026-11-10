@@ -4,6 +4,10 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- Updated the Novaris Framework from 1.1.7 to 1.1.8 in `composer.lock`. Media files the framework serves itself are sent with `nosniff`, and SVG, HTML and XML files with a sandboxing `Content-Security-Policy`, so a script inside an SVG doesn't run.
+
 ## [0.3.0] - 11.10.2026
 
 ### Changed
