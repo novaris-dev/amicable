@@ -3,7 +3,7 @@
 		<article class="<?= e( post_class( [], $single ) ) ?>">
 			<header class="entry__header">
 				<div class="entry__metadata">
-					<?= $single->date(); ?>
+					<?= e( $single->date() ); ?>
 				</div>
 
 				<h1 class="entry__title">
@@ -25,7 +25,7 @@
 						Tagged:
 
 						<?php foreach ( $tags as $tag ) : ?>
-							<a class="entry__term-anchor" href="<?= e( $tag->uri() ) ?>">
+							<a class="entry__term-anchor" href="<?= e( $tag->url() ) ?>">
 								#<?= e( $tag->name() ) ?>
 							</a>
 						<?php endforeach ?>

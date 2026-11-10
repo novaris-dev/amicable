@@ -2,7 +2,7 @@
 	<header class="entry__header">
 		<?php if ( $entry->date() ) : ?>
 			<div class="entry__metadata">
-				<?= $entry->date(); ?>
+				<?= e( $entry->date() ); ?>
 			</div>
 		<?php endif ?>
 
@@ -22,7 +22,7 @@
 	<div class="entry__content">
 		<?= $entry->excerpt( 50, sprintf(
 			' &hellip; <a class="entry__more-link" href="%s">Continue reading&nbsp;&rarr;</a>',
-			e( $entry->uri() )
+			e( $entry->url() )
 		) ) ?>
 	</div>
 </article>

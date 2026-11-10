@@ -1,7 +1,7 @@
 {
 	"name": "amicable",
 	"description": "Amicable is the default theme for the Novaris Content Management System, providing a clean, minimal starting point for showcasing your site's content.",
-	"version": "1.0.0",
+	"private": true,
 	"author": "Benjamin Lu",
 	"license": "GPL-2.0-or-later",
 	"homepage": "https://novaris-dev.com/portfolio/amicable",

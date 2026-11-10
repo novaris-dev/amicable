@@ -1,18 +1,12 @@
 {
     "name": "novaris-dev/amicable",
-    "description": "The core foundation of the Novaris Content Management System (CMS), providing a robust and flexible architecture designed to power dynamic content-driven websites.",
+    "description": "Amicable is the default theme for the Novaris Content Management System, providing a clean, minimal starting point for showcasing your site's content.",
     "license": "GPL-2.0-or-later",
-    "version": "1.0.0",
     "authors": [
         {
             "name": "Benjamin Lu"
         }
     ],
-	"autoload"    : {
-		"psr-4" : {
-			"Novaris\\" : "app"
-		}
-	},
     "require": {
         "php": ">=8.2",
         "novaris-dev/framework": "^1.0"

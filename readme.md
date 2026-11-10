@@ -16,40 +16,43 @@ When using the standard Novaris starter application, Amicable is the default con
 
 ## Theme Structure
 
-A packaged Amicable theme uses the following structure:
+A packaged Amicable theme, as built by `npm run build`, contains:
 
 ```text
 amicable/
-├── app/
+├── config/
 ├── public/
-├── user/
+│   └── assets/
+├── resources/
 └── theme.json
 ```
 
-### `app`
+### `config`
 
-Contains the theme's PHP application files, templates, and other theme-specific functionality.
+The theme's configuration, such as `config/app.php`, which turns on features like search, embeds and post formats, and the content types in `config/content.php`.
 
-### `public`
+### `public/assets`
 
-Contains compiled assets that are publicly accessible, including CSS, JavaScript, images, and the Vite manifest.
+The compiled CSS and JavaScript, and the Vite manifest Novaris uses to find them.
 
-### `user`
+### `resources`
 
-Contains theme content and other user-facing resources provided by the theme.
+The theme's templates in `resources/views`, and the Sass and JavaScript sources the assets are built from.
 
 ### `theme.json`
 
-Contains metadata about the theme, including its name, slug, version, and repository.
+The theme's metadata: its name, slug, version and repository. This is the version Novaris and the release workflow read.
 
 ```json
 {
     "name": "Amicable",
     "slug": "amicable",
-    "version": "0.0.1",
+    "version": "x.y.z",
     "repository": "novaris-dev/amicable"
 }
 ```
+
+The repository's `user/` folder holds demo content for development and isn't part of the package. A theme with PHP classes of its own can add an `app/` folder, which the build includes when it exists. Amicable has none.
 
 ## Development
 
@@ -70,17 +73,9 @@ The build process creates the distributable `amicable/` directory containing the
 
 ## Releases
 
-Amicable releases follow semantic versioning.
+Amicable releases follow semantic versioning, and are published automatically.
 
-Before publishing a new release, update the version in `theme.json`.
-
-For example:
-
-```json
-"version": "0.0.2"
-```
-
-The GitHub release tag should match the version defined in `theme.json`.
+To make a release, open a pull request from a `release/x.y.z` branch into `develop` that sets the version in `theme.json` and moves the changelog notes under a `## [x.y.z]` heading. When it's merged, the release workflow tags the merge commit `x.y.z`, publishes the release with those changelog notes, builds the theme and attaches the package. Don't tag the release by hand.
 
 Release packages use the following naming convention:
 
@@ -91,8 +86,8 @@ Release packages use the following naming convention:
 For example:
 
 ```text
-amicable.0.0.1.zip
-amicable.0.0.2.zip
+amicable.0.3.2.zip
+amicable.0.3.3.zip
 ```
 
 ## Novaris
