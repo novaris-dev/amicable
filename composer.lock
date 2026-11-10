@@ -967,16 +967,16 @@
         },
         {
             "name": "novaris-dev/framework",
-            "version": "v1.1.8",
+            "version": "v1.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/novaris-dev/framework.git",
-                "reference": "a07e71288255ed990f96550df027ea6de9a9af16"
+                "reference": "0d48ada4cd57a7e0f4a1094026ce5e67155e95dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/novaris-dev/framework/zipball/a07e71288255ed990f96550df027ea6de9a9af16",
-                "reference": "a07e71288255ed990f96550df027ea6de9a9af16",
+                "url": "https://api.github.com/repos/novaris-dev/framework/zipball/0d48ada4cd57a7e0f4a1094026ce5e67155e95dd",
+                "reference": "0d48ada4cd57a7e0f4a1094026ce5e67155e95dd",
                 "shasum": ""
             },
             "require": {
@@ -1025,9 +1025,9 @@
             "description": "Novaris Framework: The core foundation of the Novaris Content Management System (CMS), providing a robust and flexible architecture designed to power dynamic content-driven websites",
             "support": {
                 "issues": "https://github.com/novaris-dev/framework/issues",
-                "source": "https://github.com/novaris-dev/framework/tree/v1.1.8"
+                "source": "https://github.com/novaris-dev/framework/tree/v1.1.9"
             },
-            "time": "2026-11-10T18:22:26+00:00"
+            "time": "2026-11-10T18:30:20+00:00"
         },
         {
             "name": "phpoption/phpoption",

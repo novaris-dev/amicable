@@ -4,6 +4,12 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+## [0.3.2] - 11.10.2026
+
+### Changed
+
+- Updated the Novaris Framework from 1.1.8 to 1.1.9 in `composer.lock`. Gzipped `.svgz` files the framework serves now show in browsers.
+
 ## [0.3.1] - 11.10.2026
 
 ### Changed
