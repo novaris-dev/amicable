@@ -4,6 +4,8 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+## [0.3.0] - 11.10.2026
+
 ### Changed
 
 - Updated the Novaris Framework from 1.1.6 to 1.1.7 in `composer.lock`. Cache files can no longer create objects, paths like `/search.json` and `/search/json` no longer share a full-page cache file, `novaris export` lists any page it couldn't export, and `cache.global_check` can make the full-page cache check for file changes less often.
