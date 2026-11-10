@@ -10,7 +10,7 @@
 	<header class="entry__header">
 		<?php if ( $entry->date() ) : ?>
 			<div class="entry__metadata">
-				<?= $entry->date(); ?>
+				<?= e( $entry->date() ); ?>
 			</div>
 		<?php endif ?>
 

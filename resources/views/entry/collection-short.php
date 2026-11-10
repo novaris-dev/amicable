@@ -21,7 +21,7 @@ $labels = [ 'aside' => 'Aside', 'status' => 'Status', 'quote' => 'Quote', 'link'
 		<span class="entry__format-label"><?= e( $labels[ $entry->format() ] ?? ucfirst( $entry->format() ) ); ?></span>
 		<?php if ( $entry->date() ) : ?>
 			<span aria-hidden="true">·</span>
-			<a class="entry__format-date" href="<?= e( $entry->url() ); ?>"><?= $entry->date(); ?></a>
+			<a class="entry__format-date" href="<?= e( $entry->url() ); ?>"><?= e( $entry->date() ); ?></a>
 		<?php endif ?>
 	</footer>
 </article>

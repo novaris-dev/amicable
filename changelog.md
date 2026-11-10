@@ -4,6 +4,18 @@ All notable changes to Amicable will be documented in this file.
 
 ## [Unreleased]
 
+## [0.3.3] - 11.10.2026
+
+### Changed
+
+- `composer.json` has the theme's description instead of the framework's, and no `version`, since `theme.json` holds the version. Its `autoload` block, which mapped the framework's `Novaris\` namespace to an `app/` folder that doesn't exist, is gone.
+- `package.json` has no `version` and is marked `private`, so it can't be published to npm by mistake.
+- The readme's Theme Structure section lists what the package actually contains (`config/`, `public/assets/`, `resources/` and `theme.json`), and the Releases section describes the automatic releases.
+
+### Fixed
+
+- Entry links in `entry/archive.php` weren't escaped. Every link and date in the templates is now escaped, and the templates use `url()` instead of the deprecated `uri()`. The HTML they produce is unchanged.
+
 ## [0.3.2] - 11.10.2026
 
 ### Changed
